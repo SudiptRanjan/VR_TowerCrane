@@ -94,10 +94,10 @@ public class PlayerItem : MonoBehaviour
     }
 
     
-    private void StopFiring(CallbackContext obj)
-    {
-        isTriggered = false;
-    }
+    //private void StopFiring(CallbackContext obj)
+    //{
+    //    isTriggered = false;
+    //}
 
   
 
@@ -130,7 +130,7 @@ public class PlayerItem : MonoBehaviour
 
         clampedX = Mathf.Clamp(stickXRot, gunControlXPos.x, gunControlXPos.y);
         clampedZ = Mathf.Clamp(stickYRot, gunControlYPos.x, gunControlYPos.y);
-        rotateValue = clampedZ;
+        rotateValue = -clampedZ;
         movementValue = clampedX;
         //print("clampedX == "+ clampedX);
         playerStick.localRotation = Quaternion.Euler(clampedX, clampedZ, 0);
