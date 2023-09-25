@@ -15,7 +15,7 @@ public class RightJoystick : MonoBehaviour
     [SerializeField] Transform playerStick;
 
     [SerializeField] XRSimpleInteractable xrHandsRopes;
-    bool isTriggered;
+    //bool isTriggered;
 
     [SerializeField] Vector2 gunControlXPos;
     [SerializeField] Vector2 gunControlYPos;
@@ -77,8 +77,7 @@ public class RightJoystick : MonoBehaviour
     {
         //Debug.Log("Grab Entered");
         currentInteractorRope = args0.interactorObject;
-        isTriggered = true;     //For Bullet Firing when grabbing the handle
-        //Debug.Log("Hand Position " + currentInteractor.transform.position);
+      
     }
 
 
@@ -89,7 +88,7 @@ public class RightJoystick : MonoBehaviour
         ResetPosition();
         ropeLengthValue = 0;
         currentInteractorRope = null;
-        isTriggered = false;
+       
     }
 
 

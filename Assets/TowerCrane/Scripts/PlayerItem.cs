@@ -8,6 +8,7 @@ using static UnityEngine.InputSystem.InputAction;
 public class PlayerItem : MonoBehaviour
 {
     #region PUBLIC_VARS
+    public JibMovement jibMovement;
     #endregion
 
     #region PRIVATE_VARS        
@@ -15,7 +16,7 @@ public class PlayerItem : MonoBehaviour
     [SerializeField] Transform playerStick;
 
     [SerializeField] XRSimpleInteractable xrHands;
-    bool isTriggered;
+    //bool isTriggered;
 
     [SerializeField] Vector2 gunControlXPos;
     [SerializeField] Vector2 gunControlYPos;
@@ -39,11 +40,16 @@ public class PlayerItem : MonoBehaviour
         xrHands.selectExited.AddListener(UnGrab);
 
     }
+    private void OnEnable()
+    {
+        //Events.onClickRedButton += TopBallMovement;
+    }
 
     private void OnDisable()
     {
         xrHands.selectEntered.RemoveListener(Grab);
         xrHands.selectExited.RemoveListener(UnGrab);
+        //Events.onClickRedButton -= TopBallMovement;
 
     }
 
@@ -77,7 +83,7 @@ public class PlayerItem : MonoBehaviour
     {
         //Debug.Log("Grab Entered");
         currentInteractor = args0.interactorObject;
-        isTriggered = true;     //For Bullet Firing when grabbing the handle
+        //isTriggered = true;     //For Bullet Firing when grabbing the handle
         //Debug.Log("Hand Position " + currentInteractor.transform.position);
     }
 
@@ -90,20 +96,19 @@ public class PlayerItem : MonoBehaviour
         rotateValue = 0;
         movementValue = 0;
         currentInteractor = null;
-        isTriggered = false;
+        //isTriggered = false;
     }
 
     
-    //private void StopFiring(CallbackContext obj)
-    //{
-    //    isTriggered = false;
-    //}
-
+   
   
 
-    private void TopBallMovement()
+    private void TopBallMovement( )
     {
+        //Debug.Log("currentInteractor.transform.positio =" + currentInteractor.transform.position);
+        //Debug.Log("playerStick.position = " + playerStick.position);
         Vector3 stickDirection = currentInteractor.transform.position - playerStick.position;
+        
         Vector3 direction = stickDirection;
         Quaternion stickForward = Quaternion.LookRotation(direction, transform.forward);
 
@@ -130,9 +135,18 @@ public class PlayerItem : MonoBehaviour
 
         clampedX = Mathf.Clamp(stickXRot, gunControlXPos.x, gunControlXPos.y);
         clampedZ = Mathf.Clamp(stickYRot, gunControlYPos.x, gunControlYPos.y);
-        rotateValue = -clampedZ;
-        movementValue = clampedX;
-        //print("clampedX == "+ clampedX);
+
+
+        if (jibMovement.isalerted  && jibMovement.isEngineStarted)
+        {
+            rotateValue = -clampedZ;
+            movementValue = clampedX;
+            print(" Alert");
+        }
+
+        //rotateValue = -clampedZ;
+        //movementValue = clampedX;
+        //print("clampedX == " + clampedX);
         playerStick.localRotation = Quaternion.Euler(clampedX, clampedZ, 0);
 
 

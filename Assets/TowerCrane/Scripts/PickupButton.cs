@@ -9,14 +9,15 @@ public class PickupButton : MonoBehaviour
 {
     #region PUBLIC_VARS
     public bool attached= false;
+     public Material rendererl;
+
     #endregion
 
     #region PRIVATE_VARS        
-   //[SerializeField] Transform playerController;
-   //[SerializeField] Transform playerStick;
+    //[SerializeField] Transform playerController;
+    //[SerializeField] Transform playerStick;
 
-   [SerializeField] XRSimpleInteractable xrHandsRopes;
-    bool isTriggered;
+    [SerializeField] XRSimpleInteractable xrHandsRopes;
 
     //[SerializeField] Vector2 gunControlXPos;
     //[SerializeField] Vector2 gunControlYPos;
@@ -38,6 +39,8 @@ public class PickupButton : MonoBehaviour
     {
         xrHandsRopes.selectEntered.AddListener(Grab);
         xrHandsRopes.selectExited.AddListener(UnGrab);
+        rendererl.color = Color.green;
+       
         attached = true;
 
     }
@@ -62,10 +65,10 @@ public class PickupButton : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Player Got Hit");
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Debug.Log("Player Got Hit");
+    //}
     #endregion
 
     #region STATIC_FUNCTIONS
@@ -81,16 +84,23 @@ public class PickupButton : MonoBehaviour
         if(attached)
         {
             attached = false;
+         
+            rendererl.color = Color.red;
+           
         }
         else
         {
             attached = true;
+
+           
+            rendererl.color = Color.green;
+          
         }
 
 
         Debug.Log("Grab Entered");
         currentInteractorRope = args0.interactorObject;
-        isTriggered = true;     //For Bullet Firing when grabbing the handle
+        //isTriggered = true;     //For Bullet Firing when grabbing the handle
         //Debug.Log("Hand Position " + currentInteractor.transform.position);
     }
 
@@ -101,7 +111,7 @@ public class PickupButton : MonoBehaviour
         Debug.Log("UnGrabbing");
         //ropeLengthValue = 0;
         currentInteractorRope = null;
-        isTriggered = false;
+        //isTriggered = false;
     }
     #endregion
 }

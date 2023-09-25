@@ -70,7 +70,7 @@ public class Hoock : MonoBehaviour
         else
         {
             fixedJoint.connectedBody = null;
-            print("detached");
+            //print("detached");
         }
 
         //if (attached!)

@@ -11,6 +11,7 @@ public class CraneMovement : MonoBehaviour
 	float yMinValue = -35f, yManValue = -7f;
 	float clampMovement = 0;
 	public Rigidbody rb;
+    public JibMovement jibMovement;
 	[SerializeField] private float speed;
 
 	
@@ -18,63 +19,20 @@ public class CraneMovement : MonoBehaviour
 	private void OnEnable()
 	{
 		Events.onPlayerMoves += Move;
-		//Events.onPlayerRotate += Rotate;
+		
 	}
 
 	private void OnDisable()
 	{
 		Events.onPlayerMoves -= Move;
-		//Events.onPlayerRotate -= Rotate;
+		
 
 	}
 
 	private void Move( float yDirection)
 	{
-        //if(yDirection== 1 || yDirection > 0)
-        //{
-        //	clampMovement += Time.deltaTime * speed;
-        //}
-        //else if(yDirection == -1 || yDirection < 0)
-        //      {
-        //	clampMovement -= Time.deltaTime * speed;
-        //}
-
-        //if ( yDirection > 0)
-        //{
-        //    if ( yDirection < 0.3)
-        //    {
-        //        clampMovement += Time.deltaTime * speed * 0.2f;
-        //        //print("Gear 1");
-        //    }
-        //    else if (yDirection < 0.7)
-        //    {
-        //        clampMovement += Time.deltaTime * speed * 0.5f;
-        //        //print("Gear 2");
-        //    }
-        //    else if ( yDirection <= 1)
-        //    {
-        //        clampMovement += Time.deltaTime * speed;
-        //        //print("Gear 3");
-        //    }
-        //}
-        //else if ( yDirection < 0)
-        //{
-        //    if ( yDirection > -0.3)
-        //    {
-        //        clampMovement -= Time.deltaTime * speed * 0.2f;
-        //        //print("ReverceGear 1");
-        //    }
-        //    else if (yDirection > -0.7)
-        //    {
-        //        clampMovement -= Time.deltaTime * speed * 0.5f;
-        //        //print("ReverceGear 2");
-        //    }
-        //    else if ( yDirection >= -1)
-        //    {
-        //        clampMovement -= Time.deltaTime * speed;
-        //      //  print("ReverceGear 3");
-        //    }
-        //}
+        jibMovement.isEngineStarted = false;
+        jibMovement.isalerted = false;
 
         if (yDirection > 0)
         {

@@ -17,4 +17,7 @@ public static class Events
 	public delegate void OnHookDetached(bool detached);
 	public static OnHookDetached onHookDetachedToObject;
 
+	public delegate void OnClickRed(bool clicked);
+	public static OnClickRed onClickRedButton;
+
 }

@@ -9,6 +9,7 @@ public class JibMovement : MonoBehaviour
     //private CraneInputActions m_inputaction;
     [SerializeField] float moveSpeed;
     float newRotation = 0;
+    public bool isalerted, isEngineStarted;
     [SerializeField] private float yMinValueRotation = 10f, yMaxValueRotation = 60f;
     // Start is called before the first frame update
     void Start()
@@ -31,55 +32,8 @@ public class JibMovement : MonoBehaviour
     private void Rotates(float  rotate)
     {
 
-        ////float newRotation = transform.localRotation.y;
-        //newRotation = Mathf.Clamp(newRotation, yMinValueRotation, yMaxValueRotation);
-        //transform.localRotation = Quaternion.Euler(new Vector3(0, newRotation,0));
-
-        //transform.Rotate(Vector3.up * rotate * Time.deltaTime * moveSpeed);
-
-
-        //print(rotate);
-
-        //if (rotate > 0)
-        //{
-        //    if (rotate < 0.3)
-        //    {
-        //        newRotation += Time.deltaTime * moveSpeed * 0.2f;
-        //        //print("Gear 1 =" + newRotation);
-        //    }
-        //    else if (rotate < 0.7)
-        //    {
-        //        newRotation += Time.deltaTime * moveSpeed * 0.5f;
-        //        //print("Gear 2 =" + newRotation);
-        //    }
-        //    else if (rotate <= 1)
-        //    {
-        //        newRotation += Time.deltaTime * moveSpeed;
-        //        //print("Gear 3 =" + newRotation);
-        //    }
-
-        //}
-
-        //else if (rotate < 0)
-        //{
-        //    if (rotate > -0.3)
-        //    {
-        //        newRotation -= Time.deltaTime * moveSpeed * 0.2f;
-        //        //print("ReverceGear 1");
-        //    }
-        //    else if (rotate > -0.7)
-        //    {
-        //        newRotation -= Time.deltaTime * moveSpeed * 0.5f;
-        //        //print("ReverceGear 2");
-        //    }
-        //    else if (rotate >= -1)
-        //    {
-        //        newRotation -= Time.deltaTime * moveSpeed;
-        //         //print("ReverceGear 3");
-        //    }
-
-        //}
-        //print(rotate);
+        isalerted = false;
+        isEngineStarted = false;
         if (rotate > 0)
         {
 
