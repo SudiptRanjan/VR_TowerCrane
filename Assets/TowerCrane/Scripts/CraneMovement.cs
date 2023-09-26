@@ -11,12 +11,16 @@ public class CraneMovement : MonoBehaviour
 	float yMinValue = -35f, yManValue = -7f;
 	float clampMovement = 0;
 	public Rigidbody rb;
-    public JibMovement jibMovement;
+    
 	[SerializeField] private float speed;
 
-	
+    private void Start()
+    {
+        
 
-	private void OnEnable()
+    }
+
+    private void OnEnable()
 	{
 		Events.onPlayerMoves += Move;
 		
@@ -31,9 +35,7 @@ public class CraneMovement : MonoBehaviour
 
 	private void Move( float yDirection)
 	{
-        jibMovement.isEngineStarted = false;
-        jibMovement.isalerted = false;
-
+       
         if (yDirection > 0)
         {
            if (yDirection < 15)

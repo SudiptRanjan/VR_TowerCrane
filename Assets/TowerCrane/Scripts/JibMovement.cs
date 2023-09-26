@@ -9,12 +9,13 @@ public class JibMovement : MonoBehaviour
     //private CraneInputActions m_inputaction;
     [SerializeField] float moveSpeed;
     float newRotation = 0;
-    public bool isalerted, isEngineStarted;
+    //public bool isalerted, isEngineStarted;
     [SerializeField] private float yMinValueRotation = 10f, yMaxValueRotation = 60f;
     // Start is called before the first frame update
     void Start()
     {
-       
+        //isalerted = false;
+        //isEngineStarted = false;
     }
 
     private void OnEnable()
@@ -32,8 +33,7 @@ public class JibMovement : MonoBehaviour
     private void Rotates(float  rotate)
     {
 
-        isalerted = false;
-        isEngineStarted = false;
+      
         if (rotate > 0)
         {
 

@@ -8,6 +8,8 @@ using static UnityEngine.InputSystem.InputAction;
 public class RightJoystick : MonoBehaviour
 {
     #region PUBLIC_VARS
+    public  RightGreenButton rightGreenButton;
+    public RightRedButton rightRedButton;
     #endregion
 
     #region PRIVATE_VARS        
@@ -128,7 +130,12 @@ public class RightJoystick : MonoBehaviour
 
         clampedX = Mathf.Clamp(stickXRot, gunControlXPos.x, gunControlXPos.y);
         clampedZ = Mathf.Clamp(stickYRot, gunControlYPos.x, gunControlYPos.y);
-        ropeLengthValue = clampedX;
+
+        if(rightRedButton.isalertRightButton && rightGreenButton.isStartRightButton)
+        {
+            ropeLengthValue = clampedX;
+        }
+        //ropeLengthValue = clampedX;
       
         //print("clampedX == "+ clampedX);
         playerStick.localRotation = Quaternion.Euler(clampedX, clampedZ, 0);

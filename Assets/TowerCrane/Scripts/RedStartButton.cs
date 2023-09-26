@@ -10,9 +10,9 @@ using static UnityEngine.InputSystem.InputAction;
 public class RedStartButton : MonoBehaviour
 {
     #region PUBLIC_VARS
-    //public bool alert = false;
+    public bool alert = false;
     public Material rendererls;
-    public JibMovement jibMovement;
+    //public JibMovement jibMovement;
 
     #endregion
 
@@ -76,31 +76,21 @@ public class RedStartButton : MonoBehaviour
     private void Grab(SelectEnterEventArgs args0)
     {
         currentInteractor = args0.interactorObject;
-
-        //Debug.Log(jibMovement.isalerted!);
         Debug.Log("Grab Entered red button");
-        //if (jibMovement.isalerted! && jibMovement.isEngineStarted!)
-        //{
-        //    //Debug.Log(jibMovement.isalerted!);
-        //    jibMovement.isalerted = false;
-        //    jibMovement.isEngineStarted = false;
+        //jibMovement.isalerted = true;
+        //jibMovement.isEngineStarted = true;
+        //alert = true;
 
-
-        //    rendererls.color = Color.blue;
-
-        //}
-        //else
-        //{
-        //    jibMovement.isalerted = true;
-        //    jibMovement.isEngineStarted = true;
-
-
-        //    rendererls.color = Color.red;
-
-        //}
-
-
-
+        if (alert == false)
+        {
+            alert = true;
+            rendererls.color = Color.blue;
+        }
+        else
+        {
+            alert = false;
+            rendererls.color = Color.red;
+        }
 
     }
 

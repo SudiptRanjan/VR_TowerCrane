@@ -8,7 +8,9 @@ using static UnityEngine.InputSystem.InputAction;
 public class PlayerItem : MonoBehaviour
 {
     #region PUBLIC_VARS
-    public JibMovement jibMovement;
+    //public JibMovement jibMovement;
+    public GreenAlertButton greenAlert;
+    public RedStartButton redStartButton;
     #endregion
 
     #region PRIVATE_VARS        
@@ -137,11 +139,12 @@ public class PlayerItem : MonoBehaviour
         clampedZ = Mathf.Clamp(stickYRot, gunControlYPos.x, gunControlYPos.y);
 
 
-        if (jibMovement.isalerted  && jibMovement.isEngineStarted)
+        //if (jibMovement.isalerted  && jibMovement.isEngineStarted)
+        if(redStartButton.alert && greenAlert.engineStartButton)
         {
             rotateValue = -clampedZ;
             movementValue = clampedX;
-            print(" Alert");
+            //print(" Alert");
         }
 
         //rotateValue = -clampedZ;

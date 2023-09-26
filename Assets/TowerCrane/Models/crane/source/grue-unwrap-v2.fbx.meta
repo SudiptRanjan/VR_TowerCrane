@@ -3,7 +3,127 @@ guid: ac0954d4afdf64953ab4df7d3ed8048d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: attaches-haut
+    second: {fileID: 2100000, guid: b8cdec7f8bd884df289f31abd7374c37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beton
+    second: {fileID: 2100000, guid: 484308f94f4974090be0b6ca390cc145, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beton-haut
+    second: {fileID: 2100000, guid: 7c47b6d07ab7348899bc5f720c1835cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cabine
+    second: {fileID: 2100000, guid: 5c312f08f3823447c9f8dc1e12dd60a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cable-haut
+    second: {fileID: 2100000, guid: 7e0ed525c27db42dc9f40dd88a6bd45f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corps-bord-metal
+    second: {fileID: 2100000, guid: 8a8dcc1f6bc3b4c36bea8ccc124d2864, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corps-haut-1
+    second: {fileID: 2100000, guid: 510b30827ba404a769880325a0129f1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corps-haut-3
+    second: {fileID: 2100000, guid: 2e6900e2d86e74a0ba2ec4c8567364b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corps-metal
+    second: {fileID: 2100000, guid: 0460955be62e44112bb92552bfbcb4cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corps-top
+    second: {fileID: 2100000, guid: 98464551ca14e4cc0b110620b23df4ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: echelle
+    second: {fileID: 2100000, guid: 9e4edeafbd74943019223e7f49ea6302, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grue-accroche
+    second: {fileID: 2100000, guid: 8165e8619e5d4439296be55ffec00700, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grue-barrieres
+    second: {fileID: 2100000, guid: 45554177b8ef44ceab7c0ada3352ce39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grue-barrieres-support
+    second: {fileID: 2100000, guid: b42c6c6f8dff940e1aa13f25b1bb85c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: haut-gris
+    second: {fileID: 2100000, guid: 13461a3d122ca4a039302037a4ed2082, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: haut-jaune
+    second: {fileID: 2100000, guid: 067fc7647f1ba4f1795237f52f74fa21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pied-attache
+    second: {fileID: 2100000, guid: f0333d029641141c3ac86905f5ccb0d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pied-barre
+    second: {fileID: 2100000, guid: cc278b8dcc86c4fddb354b820f48492c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pied-support
+    second: {fileID: 2100000, guid: b810e9af83baa470586b8552126b96dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plateforme
+    second: {fileID: 2100000, guid: 0005a783dbd7b4f7ca08bfe3993dcac8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plateforme-haut
+    second: {fileID: 2100000, guid: 28dfb17b8a11f4961829b5e88a3c3f2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: poulie
+    second: {fileID: 2100000, guid: c19621d9af4b04d289bfb6e2341a3e10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: poulis-support
+    second: {fileID: 2100000, guid: 9f345f0b9de9e4cb285fddb5cda16d78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: support
+    second: {fileID: 2100000, guid: 1a9ea500a5b174a0fb63ee974d0dc169, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

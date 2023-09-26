@@ -14,24 +14,12 @@ public class PickupButton : MonoBehaviour
     #endregion
 
     #region PRIVATE_VARS        
-    //[SerializeField] Transform playerController;
-    //[SerializeField] Transform playerStick;
-
+   
     [SerializeField] XRSimpleInteractable xrHandsRopes;
-
-    //[SerializeField] Vector2 gunControlXPos;
-    //[SerializeField] Vector2 gunControlYPos;
+    [SerializeField] Vector2 buttonPressed = new Vector2(1, 0);
 
     bool grabed;
-
-    float clampedX;
-    float clampedZ;
-
-
-
     [SerializeField] IXRSelectInteractor currentInteractorRope;
-
-
     #endregion
 
     #region UNITY_CALLBACKS
@@ -40,7 +28,7 @@ public class PickupButton : MonoBehaviour
         xrHandsRopes.selectEntered.AddListener(Grab);
         xrHandsRopes.selectExited.AddListener(UnGrab);
         rendererl.color = Color.green;
-       
+        //transform.position 
         attached = true;
 
     }
@@ -65,10 +53,7 @@ public class PickupButton : MonoBehaviour
 
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    Debug.Log("Player Got Hit");
-    //}
+    
     #endregion
 
     #region STATIC_FUNCTIONS
@@ -100,8 +85,7 @@ public class PickupButton : MonoBehaviour
 
         Debug.Log("Grab Entered");
         currentInteractorRope = args0.interactorObject;
-        //isTriggered = true;     //For Bullet Firing when grabbing the handle
-        //Debug.Log("Hand Position " + currentInteractor.transform.position);
+        
     }
 
 
@@ -109,9 +93,7 @@ public class PickupButton : MonoBehaviour
     private void UnGrab(SelectExitEventArgs args0)
     {
         Debug.Log("UnGrabbing");
-        //ropeLengthValue = 0;
         currentInteractorRope = null;
-        //isTriggered = false;
     }
     #endregion
 }
