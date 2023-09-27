@@ -3,7 +3,132 @@ guid: 785d07e011b224d2cb7b34b33315b747
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: asphalt_01
+    second: {fileID: 2100000, guid: 3e478646c712046bca6a20f2f1390cd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brick_01
+    second: {fileID: 2100000, guid: 495ec5d7b5ea84dd78900977565fcc50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete_01
+    second: {fileID: 2100000, guid: 483f79b8d70a34fcdb6cd61e9fd25ff0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete_02
+    second: {fileID: 2100000, guid: 1a89fc9ce5cb64b5187ec59f6faf788b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete_03
+    second: {fileID: 2100000, guid: ec848d42008b14989bb726804e6a231c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete_04
+    second: {fileID: 2100000, guid: f3676808a4fae470ab4d9c0d6b9520c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete_05
+    second: {fileID: 2100000, guid: 32fbde103aa8e48bbb8ff83d2cdc3e9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: debris_01
+    second: {fileID: 2100000, guid: 0db7491dfe80b453ba2f0fa9950746d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass_01
+    second: {fileID: 2100000, guid: d644c14b196e54ef79d965fbfa43c6da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grass_01
+    second: {fileID: 2100000, guid: ab6b8c33b5fb14c2c82682ab4b1d2920, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ground_01
+    second: {fileID: 2100000, guid: 0675622e52d7944d8a104a96a850212c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal_01
+    second: {fileID: 2100000, guid: ac9e0862b5fb54f25a6af23912a63395, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal_02
+    second: {fileID: 2100000, guid: c7684784fc393456d94cb9b4daa6184e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_black
+    second: {fileID: 2100000, guid: ff164cff909ad45f2a66bae98c70e474, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_blue
+    second: {fileID: 2100000, guid: 8c26f4656bb8e47f5bb81ffde60dc9b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_blue_02
+    second: {fileID: 2100000, guid: 95323a84f4f7a4b358ca89ecc58d7f20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_gray
+    second: {fileID: 2100000, guid: 133a66a7c3dbf488ebbace8444e132c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_green
+    second: {fileID: 2100000, guid: 915a7c1d0ebfc4f3c9bf737b12262c14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_orange
+    second: {fileID: 2100000, guid: 7416050f291664fa1b5b4e88fce7ff35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_red
+    second: {fileID: 2100000, guid: e11f73735eb54443cb061904f3862618, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_white
+    second: {fileID: 2100000, guid: ef9b6de2f499d48bab8ae702601bab54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_yellow
+    second: {fileID: 2100000, guid: eb5c8ab35e9a34fd3bf7f7dcad6165c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic
+    second: {fileID: 2100000, guid: d8eba61c33bf64c87a69efe66d7d1b73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood_01
+    second: {fileID: 2100000, guid: 28334d8c3499443acbfa0e7fa1ac984d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood_02
+    second: {fileID: 2100000, guid: a70447d593f0e44fd809d2d594d9ed58, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

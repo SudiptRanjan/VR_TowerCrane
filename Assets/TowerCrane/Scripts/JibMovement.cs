@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class JibMovement : MonoBehaviour
 {
     //private CraneInputActions m_inputaction;
-    [SerializeField] float moveSpeed;
+    [SerializeField] float moveSpeed = 0.5f;
     float newRotation = 0;
     //public bool isalerted, isEngineStarted;
     [SerializeField] private float yMinValueRotation = 10f, yMaxValueRotation = 60f;

@@ -11,9 +11,8 @@ public class GreenAlertButton : MonoBehaviour
 {
     #region PUBLIC_VARS
     public bool engineStartButton = false;
-    public Material rendererls;
-    //public JibMovement jibMovement;
-
+    //public Material rendererls;
+   
     #endregion
 
     #region PRIVATE_VARS        
@@ -21,7 +20,7 @@ public class GreenAlertButton : MonoBehaviour
 
     [SerializeField] XRSimpleInteractable xrHands;
 
-
+    float buttonposition = -0.1f;
 
     [SerializeField] IXRSelectInteractor currentInteractor;
 
@@ -33,7 +32,7 @@ public class GreenAlertButton : MonoBehaviour
     {
         xrHands.selectEntered.AddListener(Grab);
         xrHands.selectExited.AddListener(UnGrab);
-        rendererls.color = Color.green;
+        //rendererls.color = Color.green;
 
         //alert = true;
 
@@ -81,12 +80,14 @@ public class GreenAlertButton : MonoBehaviour
         if (engineStartButton == false)
         {
             engineStartButton = true;
-            rendererls.color = Color.blue;
+            //rendererls.color = Color.blue;
+            transform.localPosition = new Vector3(1f, buttonposition, 0f);
         }
         else
         {
             engineStartButton = false;
-            rendererls.color = Color.green;
+            //rendererls.color = Color.green;
+            transform.localPosition = new Vector3(1f, 0f, 0f);
         }
 
     }
@@ -102,6 +103,7 @@ public class GreenAlertButton : MonoBehaviour
     }
     #endregion
 }
+
 
 
 

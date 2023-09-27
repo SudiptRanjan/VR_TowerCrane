@@ -11,8 +11,7 @@ public class RedStartButton : MonoBehaviour
 {
     #region PUBLIC_VARS
     public bool alert = false;
-    public Material rendererls;
-    //public JibMovement jibMovement;
+    //public Material rendererls;
 
     #endregion
 
@@ -21,7 +20,7 @@ public class RedStartButton : MonoBehaviour
 
     [SerializeField] XRSimpleInteractable xrHands;
 
-  
+    float buttonposition = -0.1f;
 
     [SerializeField] IXRSelectInteractor currentInteractor;
 
@@ -33,7 +32,7 @@ public class RedStartButton : MonoBehaviour
     {
         xrHands.selectEntered.AddListener(Grab);
         xrHands.selectExited.AddListener(UnGrab);
-        rendererls.color = Color.red;
+        //rendererls.color = Color.red;
 
         //alert = true;
 
@@ -84,12 +83,15 @@ public class RedStartButton : MonoBehaviour
         if (alert == false)
         {
             alert = true;
-            rendererls.color = Color.blue;
+            //rendererls.color = Color.blue;
+            transform.localPosition = new Vector3(1f, buttonposition, 0f);
         }
         else
         {
             alert = false;
-            rendererls.color = Color.red;
+            //rendererls.color = Color.red;
+            transform.localPosition = new Vector3(1f, 0f, 0f);
+
         }
 
     }
@@ -105,6 +107,7 @@ public class RedStartButton : MonoBehaviour
     }
     #endregion
 }
+
 
 
 

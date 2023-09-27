@@ -10,7 +10,7 @@ public class RightGreenButton : MonoBehaviour
     #region PUBLIC_VARS
     public bool isStartRightButton = false;
 
-    public Material rendererls;
+    //public Material rendererls;
     //public JibMovement jibMovement;
 
     #endregion
@@ -20,7 +20,7 @@ public class RightGreenButton : MonoBehaviour
 
     [SerializeField] XRSimpleInteractable xrHandsGreen;
 
-
+    float buttonposition = -0.1f;
 
     [SerializeField] IXRSelectInteractor greenCurrentInteractor;
 
@@ -36,7 +36,7 @@ public class RightGreenButton : MonoBehaviour
         xrHandsGreen.selectExited.AddListener(UnGrab);
 
 
-        rendererls.color = Color.green;
+        //rendererls.color = Color.green;
 
         //alert = true;
 
@@ -76,12 +76,14 @@ public class RightGreenButton : MonoBehaviour
         if (!isStartRightButton)
         {
             isStartRightButton = true;
-            rendererls.color = Color.blue;
+            //rendererls.color = Color.blue;
+            transform.localPosition = new Vector3(1f, buttonposition, 0f);
         }
         else
         {
             isStartRightButton = false;
-            rendererls.color = Color.green;
+            //rendererls.color = Color.green;
+            transform.localPosition = new Vector3(1f, 0f, 0f);
         }
 
     }
@@ -98,6 +100,8 @@ public class RightGreenButton : MonoBehaviour
     }
     #endregion
 }
+
+
 
 
 

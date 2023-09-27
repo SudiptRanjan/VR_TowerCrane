@@ -133,7 +133,7 @@ public class RightJoystick : MonoBehaviour
 
         if(rightRedButton.isalertRightButton && rightGreenButton.isStartRightButton)
         {
-            ropeLengthValue = clampedX;
+            ropeLengthValue = -clampedX;
         }
         //ropeLengthValue = clampedX;
       

@@ -10,8 +10,7 @@ public class RightRedButton : MonoBehaviour
     #region PUBLIC_VARS
     public bool isalertRightButton = false;
 
-    public Material rendererls;
-    //public JibMovement jibMovement;
+    //public Material rendererls;
 
     #endregion
 
@@ -20,7 +19,7 @@ public class RightRedButton : MonoBehaviour
 
     [SerializeField] XRSimpleInteractable xrHands;
 
-
+    float buttonposition = -0.1f;
 
     [SerializeField] IXRSelectInteractor redCurrentInteractor;
 
@@ -35,7 +34,7 @@ public class RightRedButton : MonoBehaviour
 
 
 
-        rendererls.color = Color.red;
+        //rendererls.color = Color.red;
 
         //alert = true;
 
@@ -72,12 +71,14 @@ public class RightRedButton : MonoBehaviour
         if (isalertRightButton == false)
         {
             isalertRightButton = true;
-            rendererls.color = Color.blue;
+            //rendererls.color = Color.blue;
+            transform.localPosition = new Vector3(1f, buttonposition, 0f);
         }
         else
         {
             isalertRightButton = false;
-            rendererls.color = Color.red;
+            //rendererls.color = Color.red;
+            transform.localPosition = new Vector3(1f, 0f, 0f);
         }
 
       
@@ -92,7 +93,6 @@ public class RightRedButton : MonoBehaviour
         //ropeLengthValue = 0;
         redCurrentInteractor = null;
 
-        //isTriggered = false;
     }
     #endregion
 }

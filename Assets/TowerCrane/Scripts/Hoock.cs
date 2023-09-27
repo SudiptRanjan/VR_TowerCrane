@@ -5,10 +5,10 @@ using UnityEngine;
 public class Hoock : MonoBehaviour
 {
    
-    [SerializeField] private float radius;
-    public Transform hoockConnect;
-    public FixedJoint fixedJoint;
-    Rigidbody rb;
+    //[SerializeField] private float radius;
+    //public Transform hoockConnect;
+    //public FixedJoint fixedJoint;
+    public Rigidbody rb;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -19,80 +19,62 @@ public class Hoock : MonoBehaviour
     
     }
 
-    private void OnEnable()
-    {
-        Events.onHookAttachToObject += CheckingOfPhysicsBody;
-        Events.onHookDetachedToObject += BodyIsDetached;
-    }
+    //private void OnEnable()
+    //{
+    //    Events.onHookAttachToObject += CheckingOfPhysicsBody;
+    //    Events.onHookDetachedToObject += BodyIsDetached;
+    //}
 
-    private void OnDisable()
-    {
-        Events.onHookAttachToObject -= CheckingOfPhysicsBody;
-        Events.onHookDetachedToObject -=  BodyIsDetached;
-    }
+    //private void OnDisable()
+    //{
+    //    Events.onHookAttachToObject -= CheckingOfPhysicsBody;
+    //    Events.onHookDetachedToObject -=  BodyIsDetached;
+    //}
 
-    void BodyIsDetached(bool detached)
-    {
-        //print(detached);
+    //void BodyIsDetached(bool detached)
+    //{
+    //    //print(detached);
 
-        //if (detached!)
-        //{
-        //    detached = true;
-        //    fixedJoint.connectedBody = null;
+    //    //if (detached!)
+    //    //{
+    //    //    detached = true;
+    //    //    fixedJoint.connectedBody = null;
 
-        //}
-    }
+    //    //}
+    //}
 
 
-    void CheckingOfPhysicsBody(bool attached)
-    {
+    //void CheckingOfPhysicsBody(bool attached)
+    //{
 
-        if (attached )
-        {
+    //    if (attached )
+    //    {
             
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
-            print("attached");
-            foreach (Collider grabableObject in hitColliders)
-            {
+    //        Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
+    //        print("attached");
+    //        foreach (Collider grabableObject in hitColliders)
+    //        {
                
-                Container grabableContainer = grabableObject.gameObject.GetComponent<Container>();
-                //print(grabableContainer);
-                if (grabableContainer != null )
-                {
-                    grabableContainer.transform.position = hoockConnect.transform.position;
-                    fixedJoint.connectedBody = grabableContainer.rb;
+    //            Container grabableContainer = grabableObject.gameObject.GetComponent<Container>();
+    //            //print(grabableContainer);
+    //            if (grabableContainer != null )
+    //            {
+    //                grabableContainer.transform.position = hoockConnect.transform.position;
+    //                fixedJoint.connectedBody = grabableContainer.rb;
                     
 
-                }
-            }
-
-        }
-        else
-        {
-            fixedJoint.connectedBody = null;
-            //print("detached");
-        }
-
-        //if (attached!)
-        //{
-            
-        //    fixedJoint.connectedBody = null;
-        //    print("detached");
-
-        //}
-    }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.layer == 6 && attached)
-    //    {
-    //        Debug.Log("block");
-    //        //other.transform.SetParent(this.transform);
-    //        other.transform.position = hoockConnect.transform.position;
-    //        fixedJoint.connectedBody = other.attachedRigidbody;
-
-
+    //            }
+    //        }
 
     //    }
+    //    else
+    //    {
+    //        fixedJoint.connectedBody = null;
+    //        //print("detached");
+    //    }
+
+       
     //}
+
+    
 }

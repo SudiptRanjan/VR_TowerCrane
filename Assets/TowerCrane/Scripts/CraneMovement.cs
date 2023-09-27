@@ -12,7 +12,7 @@ public class CraneMovement : MonoBehaviour
 	float clampMovement = 0;
 	public Rigidbody rb;
     
-	[SerializeField] private float speed;
+	[SerializeField] private float speed = 0.5f;
 
     private void Start()
     {
