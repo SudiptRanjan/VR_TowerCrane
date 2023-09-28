@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Rope : MonoBehaviour
 {
-    public SpringJoint springJoint;
+    ConfigurableJoint configurableJoint;
     public LineRenderer line;
-    public float distanceOfRope, minDistance = 3f, maxDistance = 15f;
+    public float distanceOfRope, minDistance, maxDistance;
+    public float minHighDistance, maxHighDistance;
+    public SoftJointLimit limits = new SoftJointLimit();
 
 
     //Rigidbody rb;
 
     void Start()
     {
-        //rb = GetComponent<Rigidbody>();
         line = GetComponent<LineRenderer>();
+        configurableJoint = GetComponent<ConfigurableJoint>(); ;
 
     }
 
@@ -42,50 +44,52 @@ public class Rope : MonoBehaviour
 
 
         line.SetPosition(0, transform.position);
-        line.SetPosition(1, springJoint.connectedBody.transform.position);
+        line.SetPosition(1, configurableJoint.connectedBody.transform.position);
+        //line.SetPosition(1, springJoint.connectedBody.transform.position);
 
        
 
-        if (ropeValue > 0)
+        if (ropeValue > 0 && distanceOfRope < maxHighDistance)
         {
             if (ropeValue < 15)
             {
-                springJoint.maxDistance = distanceOfRope += 0.01f;
+                distanceOfRope += 0.01f;
                 //print("Gear 1= ");
             }
             else if (ropeValue < 30)
             {
-                springJoint.maxDistance = distanceOfRope += 0.03f;
+                 distanceOfRope += 0.03f;
                 //print("Gear 2 " );
             }
             else if (ropeValue <= 45)
             {
-                springJoint.maxDistance = distanceOfRope += 0.5f;
+                distanceOfRope += 0.5f;
                 //print("Gear 3  ");
             }
         }
-        else if (ropeValue < 0)
+        else if (ropeValue < 0 && distanceOfRope > maxDistance)
         {
             if (ropeValue > -15)
             {
-                springJoint.maxDistance = distanceOfRope -= 0.01f;
+                 distanceOfRope -= 0.01f;
                 //print("ReverceGear 1");
             }
             else if (ropeValue > -30)
             {
-                springJoint.maxDistance = distanceOfRope -= 0.03f;
+                distanceOfRope -= 0.03f;
                 //print("ReverceGear 2");
             }
             else if (ropeValue >= -45)
             {
-                springJoint.maxDistance = distanceOfRope -= 0.05f;
+                distanceOfRope -= 0.05f;
                 //print("ReverceGear 3");
             }
         }
 
 
 
-        distanceOfRope = Mathf.Clamp(springJoint.maxDistance, minDistance, maxDistance);
+        limits.limit = distanceOfRope;
+        configurableJoint.linearLimit = limits;
 
     }
 

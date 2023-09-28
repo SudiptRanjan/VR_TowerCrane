@@ -8,8 +8,8 @@ using static UnityEngine.InputSystem.InputAction;
 public class RightJoystick : MonoBehaviour
 {
     #region PUBLIC_VARS
-    public  RightGreenButton rightGreenButton;
-    public RightRedButton rightRedButton;
+    public GreenAlertButton greenAlert;
+    public RedStartButton redStartButton;
     #endregion
 
     #region PRIVATE_VARS        
@@ -131,7 +131,7 @@ public class RightJoystick : MonoBehaviour
         clampedX = Mathf.Clamp(stickXRot, gunControlXPos.x, gunControlXPos.y);
         clampedZ = Mathf.Clamp(stickYRot, gunControlYPos.x, gunControlYPos.y);
 
-        if(rightRedButton.isalertRightButton && rightGreenButton.isStartRightButton)
+        if (redStartButton.alert && greenAlert.engineStartButton)
         {
             ropeLengthValue = -clampedX;
         }

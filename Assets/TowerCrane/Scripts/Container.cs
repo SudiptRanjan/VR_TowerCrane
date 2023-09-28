@@ -16,7 +16,7 @@ public class Container : MonoBehaviour
 
     private void Update()
     {
-        //rb.WakeUp();
+        rb.WakeUp();
     }
 
     private void OnEnable()
@@ -65,6 +65,8 @@ public class Container : MonoBehaviour
 
                 }
             }
+
+            rb.velocity = Vector3.zero;
 
         }
         else
