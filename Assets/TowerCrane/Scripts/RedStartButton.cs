@@ -1,5 +1,3 @@
-
-
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -11,12 +9,14 @@ public class RedStartButton : MonoBehaviour
 {
     #region PUBLIC_VARS
     public bool alert = false;
-    //public Material rendererls;
+    public AudioSource audioSource;
+    public Material rendererls;
+    
 
     #endregion
 
     #region PRIVATE_VARS        
-    
+    //private Material material;
 
     [SerializeField] XRSimpleInteractable xrHands;
 
@@ -32,8 +32,7 @@ public class RedStartButton : MonoBehaviour
     {
         xrHands.selectEntered.AddListener(Grab);
         xrHands.selectExited.AddListener(UnGrab);
-        //rendererls.color = Color.red;
-
+        //rendererls.sur = Color.red;
         //alert = true;
 
     }
@@ -72,10 +71,13 @@ public class RedStartButton : MonoBehaviour
     #endregion
 
     #region PRIVATE_FUNCTIONS
+  
+
+   
     private void Grab(SelectEnterEventArgs args0)
     {
         currentInteractor = args0.interactorObject;
-        Debug.Log("Grab Entered red button");
+        //Debug.Log("Grab Entered red button");
         //jibMovement.isalerted = true;
         //jibMovement.isEngineStarted = true;
         //alert = true;
@@ -83,14 +85,22 @@ public class RedStartButton : MonoBehaviour
         if (alert == false)
         {
             alert = true;
+            audioSource.Play();
             //rendererls.color = Color.blue;
+
             transform.localPosition = new Vector3(1f, buttonposition, 0f);
+            rendererls.EnableKeyword("_EMISSION");
+            
+            //rendererls.SetFloat("_EmissionScaleUI", 10f);
         }
         else
         {
             alert = false;
             //rendererls.color = Color.red;
+            audioSource.Stop();
             transform.localPosition = new Vector3(1f, 0f, 0f);
+            rendererls.DisableKeyword("_EMISSION");
+            //rendererls.SetFloat("_EmissionScaleUI", -10f);
 
         }
 
@@ -100,7 +110,7 @@ public class RedStartButton : MonoBehaviour
 
     private void UnGrab(SelectExitEventArgs args0)
     {
-        Debug.Log("UnGrabbing red button");
+        //Debug.Log("UnGrabbing red button");
         //ropeLengthValue = 0;
         currentInteractor = null;
         //isTriggered = false;

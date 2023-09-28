@@ -14,10 +14,10 @@ public class Hoock : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-    private void FixedUpdate()
-    {
-        rb.WakeUp();
-    }
+    //private void FixedUpdate()
+    //{
+    //    rb.WakeUp();
+    //}
 
 
     private bool isMoving = false;
@@ -25,6 +25,7 @@ public class Hoock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rb.WakeUp();
         // Check for input to move the hook
         float movementInput = Input.GetAxis("Vertical"); // Adjust based on your input method
 
@@ -47,13 +48,13 @@ public class Hoock : MonoBehaviour
         }
         else
         {
-            Debug.Log("velocity :" + rb.velocity);
+            //Debug.Log("velocity :" + rb.velocity);
         }
     }
 
     void ApplyDecelerationForce()
     {
-        Debug.Log("ApplyDecelerationForce :" + rb.velocity);
+        //Debug.Log("ApplyDecelerationForce :" + rb.velocity);
 
         // Calculate the opposite force to decelerate the hook
         Vector3 deceleration = -rb.velocity.normalized * decelerationForce;

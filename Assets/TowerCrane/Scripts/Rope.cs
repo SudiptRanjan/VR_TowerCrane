@@ -63,7 +63,7 @@ public class Rope : MonoBehaviour
             }
             else if (ropeValue <= 45)
             {
-                distanceOfRope += 0.5f;
+                distanceOfRope += 0.05f;
                 //print("Gear 3  ");
             }
         }

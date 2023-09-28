@@ -11,7 +11,7 @@ public class GreenAlertButton : MonoBehaviour
 {
     #region PUBLIC_VARS
     public bool engineStartButton = false;
-    //public Material rendererls;
+    public Material rendererls;
    
     #endregion
 
@@ -82,12 +82,14 @@ public class GreenAlertButton : MonoBehaviour
             engineStartButton = true;
             //rendererls.color = Color.blue;
             transform.localPosition = new Vector3(1f, buttonposition, 0f);
+            rendererls.EnableKeyword("_EMISSION");
         }
         else
         {
             engineStartButton = false;
             //rendererls.color = Color.green;
             transform.localPosition = new Vector3(1f, 0f, 0f);
+            rendererls.DisableKeyword("_EMISSION");
         }
 
     }

@@ -6,8 +6,9 @@ public class Container : MonoBehaviour
 {
     [SerializeField] private float radius;
     public Transform hoockConnect;
-    public FixedJoint fixedJoint;
+    private FixedJoint fixedJoint;
     public Rigidbody rb;
+    private bool isHooked = false;
 
     private void Start()
 	{
@@ -51,30 +52,38 @@ public class Container : MonoBehaviour
         {
 
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
-            print("attached");
             foreach (Collider grabableObject in hitColliders)
             {
 
                 Hoock grabableContainer = grabableObject.gameObject.GetComponent<Hoock>();
                 //print(grabableContainer);
-                if (grabableContainer != null)
+                if (grabableContainer != null && !isHooked)
                 {
+                    isHooked = true;
+
                     transform.position = hoockConnect.transform.position;
+                    fixedJoint = gameObject.AddComponent<FixedJoint>();
                     fixedJoint.connectedBody = grabableContainer.rb;
+                    print("attached");
 
 
                 }
             }
 
-            rb.velocity = Vector3.zero;
+            //rb.velocity = Vector3.zero;
 
         }
         else
         {
-            fixedJoint.connectedBody = null;
-            //print("detached");
-        }
+            if(fixedJoint != null )
+            {
+                isHooked = false;
+                //fixedJoint.connectedBody = null;
+                Destroy(fixedJoint);
+                print("detached");
+            }
 
+        }
 
     }
 }
