@@ -6,11 +6,11 @@ public class Rope : MonoBehaviour
 {
     ConfigurableJoint configurableJoint;
     public LineRenderer line;
-    public float distanceOfRope, minDistance, maxDistance;
-    public float minHighDistance, maxHighDistance;
+    public float distanceOfRope, minLowDistance;
+    public float maxHighDistance;
     public SoftJointLimit limits = new SoftJointLimit();
 
-
+    private float ropeValue = 0;
     //Rigidbody rb;
 
     void Start()
@@ -20,11 +20,7 @@ public class Rope : MonoBehaviour
 
     }
 
-    void Update()
-    {
-
-
-    }
+   
 
     private void OnEnable()
     {
@@ -47,41 +43,41 @@ public class Rope : MonoBehaviour
         line.SetPosition(1, configurableJoint.connectedBody.transform.position);
         //line.SetPosition(1, springJoint.connectedBody.transform.position);
 
-       
+
 
         if (ropeValue > 0 && distanceOfRope < maxHighDistance)
         {
             if (ropeValue < 15)
             {
-                distanceOfRope += 0.01f;
+                distanceOfRope += 0.001f;
                 //print("Gear 1= ");
             }
             else if (ropeValue < 30)
             {
-                 distanceOfRope += 0.03f;
+                distanceOfRope += 0.003f;
                 //print("Gear 2 " );
             }
             else if (ropeValue <= 45)
             {
-                distanceOfRope += 0.05f;
+                distanceOfRope += 0.005f;
                 //print("Gear 3  ");
             }
         }
-        else if (ropeValue < 0 && distanceOfRope > maxDistance)
+        else if (ropeValue < 0 && distanceOfRope > minLowDistance)
         {
             if (ropeValue > -15)
             {
-                 distanceOfRope -= 0.01f;
+                distanceOfRope -= 0.001f;
                 //print("ReverceGear 1");
             }
             else if (ropeValue > -30)
             {
-                distanceOfRope -= 0.03f;
+                distanceOfRope -= 0.003f;
                 //print("ReverceGear 2");
             }
             else if (ropeValue >= -45)
             {
-                distanceOfRope -= 0.05f;
+                distanceOfRope -= 0.005f;
                 //print("ReverceGear 3");
             }
         }
@@ -93,4 +89,85 @@ public class Rope : MonoBehaviour
 
     }
 
+    //IEnumerator UpdateRopeLimit()
+    //{
+    //    while (ropeValue != 0)
+    //    {
+    //        Debug.Log("UpdateRopeLimit");
+    //        //print(ropeValue);
+    //        if (ropeValue > 0 && distanceOfRope < maxHighDistance)
+    //        {
+    //            if (ropeValue < 15)
+    //            {
+    //                distanceOfRope += 0.01f;
+    //                //print("Gear 1= ");
+    //            }
+    //            else if (ropeValue < 30)
+    //            {
+    //                distanceOfRope += 0.03f;
+    //                //print("Gear 2 " );
+    //            }
+    //            else if (ropeValue <= 45)
+    //            {
+    //                distanceOfRope += 0.05f;
+    //                //print("Gear 3  ");
+    //            }
+
+    //            // Debug.Log("distanceOfRope ++++ =" + distanceOfRope);
+    //        }
+    //        else if (ropeValue < 0 && distanceOfRope > minLowDistance)
+    //        {
+    //            if (ropeValue > -15)
+    //            {
+    //                distanceOfRope -= 0.01f;
+    //                //print("ReverceGear 1");
+    //            }
+    //            else if (ropeValue > -30)
+    //            {
+    //                distanceOfRope -= 0.03f;
+    //                //print("ReverceGear 2");
+    //            }
+    //            else if (ropeValue >= -45)
+    //            {
+    //                distanceOfRope -= 0.05f;
+    //                //print("ReverceGear 3");
+    //            }
+    //            //  Debug.Log("distanceOfRope ----- =" + distanceOfRope);
+
+    //        }
+
+    //        // if (ropeValue != 0)
+    //        {
+    //            limits.limit = distanceOfRope;
+
+
+    //            configurableJoint.linearLimit = limits;
+
+    //            line.SetPosition(0, transform.position);
+
+    //            line.SetPosition(1, configurableJoint.connectedBody.transform.position);
+
+    //        }
+    //        yield return null;
+    //        //yield return new WaitForSeconds(0.005f);
+    //    }
+    //}
+
+    //void SetLengthOfRope(float ropeValue)
+    //{
+
+
+
+
+    //    if (this.ropeValue != ropeValue)
+    //    {
+    //        this.ropeValue = ropeValue;
+    //        //StartCoroutine(UpdateRopeLimit());
+    //    }
+
+
+
+    //}
+
 }
+    

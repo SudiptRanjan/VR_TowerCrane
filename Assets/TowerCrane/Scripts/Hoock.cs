@@ -5,19 +5,30 @@ using UnityEngine;
 public class Hoock : MonoBehaviour
 {
 
-    //[SerializeField] private float radius;
-    //public Transform hoockConnect;
-    //public FixedJoint fixedJoint;
-    public float decelerationForce = 0.5f;
-    public Rigidbody rb;
+    [SerializeField] private float radius;
+    public Transform hoockConnect;
+    private FixedJoint fixedJoint;
+    public float decelerationForce = 1f;
+    private bool isHooked = false;
+    private Rigidbody rb;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
-    //private void FixedUpdate()
-    //{
-    //    rb.WakeUp();
-    //}
+
+    private void OnEnable()
+    {
+        Events.onHookAttachToObject += CheckingOfPhysicsBody;
+        //Events.onHookDetachedToObject += BodyIsDetached;
+    }
+
+    private void OnDisable()
+    {
+        Events.onHookAttachToObject -= CheckingOfPhysicsBody;
+        //Events.onHookDetachedToObject -= BodyIsDetached;
+    }
+
+
 
 
     private bool isMoving = false;
@@ -61,6 +72,48 @@ public class Hoock : MonoBehaviour
 
         // Apply the deceleration force to the Rigidbody
         rb.AddForce(deceleration, ForceMode.Acceleration);
+    }
+    void CheckingOfPhysicsBody(bool attached)
+    {
+
+        if (attached)
+        {
+
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
+            foreach (Collider grabableObject in hitColliders)
+            {
+
+                Container grabableContainer = grabableObject.gameObject.GetComponent<Container>();
+                //print(grabableContainer);
+                if (grabableContainer != null && !isHooked)
+                {
+                    isHooked = true;
+
+                    grabableContainer.transform.position = hoockConnect.transform.position;
+                    fixedJoint = gameObject.AddComponent<FixedJoint>();
+                    fixedJoint.connectedBody = grabableContainer.rb;
+                    print("attached");
+                   // grabableContainer.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    grabableContainer.GetComponent<Rigidbody>().mass = 100;
+
+                }
+            }
+
+            //rb.velocity = Vector3.zero;
+
+        }
+        else
+        {
+            if (fixedJoint != null)
+            {
+                isHooked = false;
+                //fixedJoint.connectedBody = null;
+                Destroy(fixedJoint);
+                print("detached");
+            }
+
+        }
+
     }
 
 

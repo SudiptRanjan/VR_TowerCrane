@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
-
+using System.Collections;
 
 public class RightJoystick : MonoBehaviour
 {
@@ -40,6 +40,7 @@ public class RightJoystick : MonoBehaviour
         xrHandsRopes.selectEntered.AddListener(Grab);
         xrHandsRopes.selectExited.AddListener(UnGrab);
 
+
     }
 
     private void OnDisable()
@@ -51,15 +52,12 @@ public class RightJoystick : MonoBehaviour
 
     private void Update()
     {
-
-
         if (currentInteractorRope != null)
         {
             TopBallMovement();
-        }
+            //Events.onRopeValueChange(ropeLengthValue);
 
-        Events.onRopeValueChange(ropeLengthValue);
-        
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -73,24 +71,27 @@ public class RightJoystick : MonoBehaviour
 
     #region PUBLIC_FUNCTIONS
     #endregion
-
+    bool isgrabed = false;
     #region PRIVATE_FUNCTIONS
     private void Grab(SelectEnterEventArgs args0)
     {
-        //Debug.Log("Grab Entered");
+        isgrabed = true;
+        Debug.Log("Grab Entered");
         currentInteractorRope = args0.interactorObject;
-      
+        //StartCoroutine(UpdateRopeLimit());
     }
 
 
 
     private void UnGrab(SelectExitEventArgs args0)
     {
-        //Debug.Log("UnGrabbing");
+        isgrabed = false;
+        Debug.Log("UnGrabbing");
         ResetPosition();
         ropeLengthValue = 0;
         currentInteractorRope = null;
-       
+        //StopCoroutine(UpdateRopeLimit());
+        
     }
 
 
@@ -99,10 +100,32 @@ public class RightJoystick : MonoBehaviour
     //    isTriggered = false;
     //}
 
+    //IEnumerator UpdateRopeLimit()
+    //{
+    //    //while(ropeLengthValue != 0)
+    //    while (isgrabed)
+    //    {
 
+    //        yield return new WaitForSeconds(0.0001f);
+    //        Events.onRopeValueChange(ropeLengthValue);
+    //        //Debug.Log("UpdateRopeLimit");
+    //    }
+
+    //}
+    private void FixedUpdate()
+    {
+        if(isgrabed)
+        {
+            Events.onRopeValueChange(ropeLengthValue);
+
+        }
+
+    }
 
     private void TopBallMovement()
     {
+
+
         Vector3 stickDirection = currentInteractorRope.transform.position - playerStick.position;
         Vector3 direction = stickDirection;
         Quaternion stickForward = Quaternion.LookRotation(direction, transform.forward);
