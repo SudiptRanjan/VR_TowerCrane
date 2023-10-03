@@ -90,8 +90,8 @@ public class RedStartButton : MonoBehaviour
 
             transform.localPosition = new Vector3(1f, buttonposition, 0f);
             rendererls.EnableKeyword("_EMISSION");
-            
-            //rendererls.SetFloat("_EmissionScaleUI", 10f);
+
+            rendererls.SetFloat("_EmissionScaleUI", 10f);
         }
         else
         {
@@ -100,7 +100,7 @@ public class RedStartButton : MonoBehaviour
             audioSource.Stop();
             transform.localPosition = new Vector3(1f, 0f, 0f);
             rendererls.DisableKeyword("_EMISSION");
-            //rendererls.SetFloat("_EmissionScaleUI", -10f);
+            rendererls.SetFloat("_EmissionScaleUI", -10f);
 
         }
 

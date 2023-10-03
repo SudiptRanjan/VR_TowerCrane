@@ -94,9 +94,10 @@ public class Hoock : MonoBehaviour
                     fixedJoint.connectedBody = grabableContainer.rb;
                     print("attached");
                    // grabableContainer.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                    grabableContainer.GetComponent<Rigidbody>().mass = 100;
+                    grabableContainer.GetComponent<Rigidbody>().mass = 50;
 
                 }
+               
             }
 
             //rb.velocity = Vector3.zero;
