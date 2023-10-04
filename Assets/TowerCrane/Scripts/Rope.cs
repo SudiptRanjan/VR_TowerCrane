@@ -9,6 +9,7 @@ public class Rope : MonoBehaviour
     public float distanceOfRope, minLowDistance;
     public float maxHighDistance;
     public SoftJointLimit limits = new SoftJointLimit();
+    public GameObject ropePosition;
 
     private float ropeValue = 0;
     //Rigidbody rb;
@@ -40,8 +41,8 @@ public class Rope : MonoBehaviour
 
 
         line.SetPosition(0, transform.position);
-        line.SetPosition(1, configurableJoint.connectedBody.transform.position);
-        //line.SetPosition(1, springJoint.connectedBody.transform.position);
+        //line.SetPosition(1, configurableJoint.connectedBody.transform.position);
+        line.SetPosition(1, ropePosition.transform.position);
 
 
 

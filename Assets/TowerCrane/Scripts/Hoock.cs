@@ -75,11 +75,13 @@ public class Hoock : MonoBehaviour
     }
     void CheckingOfPhysicsBody(bool attached)
     {
+        float massOfContainer;
 
         if (attached)
         {
 
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
+
             foreach (Collider grabableObject in hitColliders)
             {
 
@@ -87,14 +89,17 @@ public class Hoock : MonoBehaviour
                 //print(grabableContainer);
                 if (grabableContainer != null && !isHooked)
                 {
+                     massOfContainer = grabableContainer.GetComponent<Rigidbody>().mass;
+                    print(" grabableContainer.GetComponent<Rigidbody>().mass==" + massOfContainer);
                     isHooked = true;
 
                     grabableContainer.transform.position = hoockConnect.transform.position;
                     fixedJoint = gameObject.AddComponent<FixedJoint>();
                     fixedJoint.connectedBody = grabableContainer.rb;
                     print("attached");
-                   // grabableContainer.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                    grabableContainer.GetComponent<Rigidbody>().mass = 50;
+                    // grabableContainer.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    //grabableContainer.GetComponent<Rigidbody>().mass = 25;
+                  
 
                 }
                

@@ -95,7 +95,6 @@ public class GreenAlertButton : MonoBehaviour
     }
 
 
-
     private void UnGrab(SelectExitEventArgs args0)
     {
         Debug.Log("UnGrabbing red button");
