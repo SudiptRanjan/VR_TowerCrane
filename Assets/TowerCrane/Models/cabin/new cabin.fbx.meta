@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: acd1633c642d2479cb92ba0e47e2099c
+guid: dfd74107ba53a47948302e3897ba08b6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,12 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: cabin
-    second: {fileID: 2100000, guid: a7f7781dfa1864ed5bc006e5f57c894e, type: 2}
+    second: {fileID: 2100000, guid: fc5a5ededc369446dac8c7c18cbe3e08, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: cabin_interior
-    second: {fileID: 2100000, guid: 9d5daeb160eb143c08efc2f0bd257926, type: 2}
+    second: {fileID: 2100000, guid: 4c407dd47364b40d481f562456ea4c14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: 4e1b2324d5a114b2ba41885fce484691, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

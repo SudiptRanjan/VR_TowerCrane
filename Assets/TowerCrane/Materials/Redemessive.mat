@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Red 2
+  m_Name: Redemessive
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -128,8 +128,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.2509804, g: 0.03529412, b: 0.039215688, a: 0}
-    - _Color: {r: 0.2509804, g: 0.03529412, b: 0.039215688, a: 0}
-    - _EmissionColor: {r: 0.0331023, g: 0.00034662095, b: 0, a: 1}
+    - _BaseColor: {r: 0.3679245, g: 0.022561418, b: 0.022561418, a: 1}
+    - _Color: {r: 0.3679245, g: 0.022561418, b: 0.022561418, a: 1}
+    - _EmissionColor: {r: 22.36352, g: 0.32443863, b: 0.09925278, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

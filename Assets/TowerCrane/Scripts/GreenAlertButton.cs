@@ -11,8 +11,10 @@ public class GreenAlertButton : MonoBehaviour
 {
     #region PUBLIC_VARS
     public bool engineStartButton = false;
-    public Material rendererls;
-   
+    public MeshRenderer greenMeshRenderer;
+    public Material greenEmissiveColor;
+    public Material greenNormalColor;
+
     #endregion
 
     #region PRIVATE_VARS        
@@ -33,7 +35,7 @@ public class GreenAlertButton : MonoBehaviour
         xrHands.selectEntered.AddListener(Grab);
         xrHands.selectExited.AddListener(UnGrab);
         //rendererls.color = Color.green;
-
+        greenMeshRenderer.material = greenNormalColor;
         //alert = true;
 
     }
@@ -81,15 +83,17 @@ public class GreenAlertButton : MonoBehaviour
         {
             engineStartButton = true;
             //rendererls.color = Color.blue;
+            greenMeshRenderer.material = greenEmissiveColor;
             transform.localPosition = new Vector3(1f, buttonposition, 0f);
-            rendererls.EnableKeyword("_EMISSION");
+          
         }
         else
         {
             engineStartButton = false;
+            greenMeshRenderer.material = greenNormalColor;
             //rendererls.color = Color.green;
             transform.localPosition = new Vector3(1f, 0f, 0f);
-            rendererls.DisableKeyword("_EMISSION");
+          
         }
 
     }

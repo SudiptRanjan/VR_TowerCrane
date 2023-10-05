@@ -10,13 +10,14 @@ public class RedStartButton : MonoBehaviour
     #region PUBLIC_VARS
     public bool alert = false;
     public AudioSource audioSource;
-    public Material rendererls;
-    
+    public MeshRenderer meshRenderer;
+    public Material emissiveColor;
+    public Material normalColor;
+
 
     #endregion
 
     #region PRIVATE_VARS        
-    //private Material material;
 
     [SerializeField] XRSimpleInteractable xrHands;
 
@@ -32,8 +33,7 @@ public class RedStartButton : MonoBehaviour
     {
         xrHands.selectEntered.AddListener(Grab);
         xrHands.selectExited.AddListener(UnGrab);
-        //rendererls.sur = Color.red;
-        //alert = true;
+        meshRenderer.material = normalColor;
 
     }
 
@@ -48,20 +48,11 @@ public class RedStartButton : MonoBehaviour
     {
 
 
-        //if (currentInteractorRope != null)
-        //{
-
-        //}
-        //Events.onClickRedButton(grabed);
-
         
 
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    Debug.Log("Player Got Hit");
-    //}
+   
     #endregion
 
     #region STATIC_FUNCTIONS
@@ -77,31 +68,25 @@ public class RedStartButton : MonoBehaviour
     private void Grab(SelectEnterEventArgs args0)
     {
         currentInteractor = args0.interactorObject;
-        //Debug.Log("Grab Entered red button");
-        //jibMovement.isalerted = true;
-        //jibMovement.isEngineStarted = true;
-        //alert = true;
+        
 
         if (alert == false)
         {
             alert = true;
             audioSource.Play();
-            //rendererls.color = Color.blue;
+
+            meshRenderer.material = emissiveColor;
 
             transform.localPosition = new Vector3(1f, buttonposition, 0f);
-            //rendererls.EnableKeyword("_EMISSION");
 
-            rendererls.SetFloat("_EmissionScaleUI", 7f);
+           
         }
         else
         {
             alert = false;
-            //rendererls.color = Color.red;
+            meshRenderer.material = normalColor;
             audioSource.Stop();
-            transform.localPosition = new Vector3(1f, 0f, 0f);
-            //rendererls.DisableKeyword("_EMISSION");
-
-            rendererls.SetFloat("_EmissionScaleUI", -7f);
+            transform.localPosition = new Vector3(1f, 0f, 0f);           
 
         }
 
@@ -110,10 +95,9 @@ public class RedStartButton : MonoBehaviour
 
     private void UnGrab(SelectExitEventArgs args0)
     {
-        //Debug.Log("UnGrabbing red button");
-        //ropeLengthValue = 0;
+        
         currentInteractor = null;
-        //isTriggered = false;
+
     }
     #endregion
 }

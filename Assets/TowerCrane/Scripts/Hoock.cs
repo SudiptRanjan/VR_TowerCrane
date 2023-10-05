@@ -19,21 +19,15 @@ public class Hoock : MonoBehaviour
     private void OnEnable()
     {
         Events.onHookAttachToObject += CheckingOfPhysicsBody;
-        //Events.onHookDetachedToObject += BodyIsDetached;
     }
 
     private void OnDisable()
     {
         Events.onHookAttachToObject -= CheckingOfPhysicsBody;
-        //Events.onHookDetachedToObject -= BodyIsDetached;
     }
-
-
-
 
     private bool isMoving = false;
 
-    // Update is called once per frame
     void Update()
     {
         rb.WakeUp();
@@ -65,7 +59,6 @@ public class Hoock : MonoBehaviour
 
     void ApplyDecelerationForce()
     {
-        //Debug.Log("ApplyDecelerationForce :" + rb.velocity);
 
         // Calculate the opposite force to decelerate the hook
         Vector3 deceleration = -rb.velocity.normalized * decelerationForce;
@@ -75,7 +68,6 @@ public class Hoock : MonoBehaviour
     }
     void CheckingOfPhysicsBody(bool attached)
     {
-        float massOfContainer;
 
         if (attached)
         {
@@ -89,23 +81,21 @@ public class Hoock : MonoBehaviour
                 //print(grabableContainer);
                 if (grabableContainer != null && !isHooked)
                 {
-                     massOfContainer = grabableContainer.GetComponent<Rigidbody>().mass;
-                    print(" grabableContainer.GetComponent<Rigidbody>().mass==" + massOfContainer);
+                  
                     isHooked = true;
 
                     grabableContainer.transform.position = hoockConnect.transform.position;
                     fixedJoint = gameObject.AddComponent<FixedJoint>();
                     fixedJoint.connectedBody = grabableContainer.rb;
                     print("attached");
-                    // grabableContainer.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                    //grabableContainer.GetComponent<Rigidbody>().mass = 25;
+                    //grabableContainer.GetComponent<Rigidbody>().mass = 10;
                   
 
                 }
                
+               
             }
 
-            //rb.velocity = Vector3.zero;
 
         }
         else

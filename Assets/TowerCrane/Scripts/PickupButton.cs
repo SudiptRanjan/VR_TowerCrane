@@ -9,12 +9,14 @@ public class PickupButton : MonoBehaviour
 {
     #region PUBLIC_VARS
     public bool attached= false;
-     //public Material rendererl;
+    public MeshRenderer pickUpMeshRenderer;
+    public Material pickUpEmissiveColor;
+    public Material pickUpNormalColor;
 
     #endregion
 
     #region PRIVATE_VARS        
-   
+
     [SerializeField] XRSimpleInteractable xrHandsRopes;
      float buttonposition = -0.1f;
 
@@ -27,8 +29,7 @@ public class PickupButton : MonoBehaviour
     {
         xrHandsRopes.selectEntered.AddListener(Grab);
         xrHandsRopes.selectExited.AddListener(UnGrab);
-        //rendererl.color = Color.green;
-        //transform.position 
+        pickUpMeshRenderer.material = pickUpNormalColor;
         attached = true;
 
     }
@@ -64,7 +65,7 @@ public class PickupButton : MonoBehaviour
         if(attached)
         {
             attached = false;
-         
+            pickUpMeshRenderer.material = pickUpEmissiveColor;
             //rendererl.color = Color.red;
             transform.localPosition = new Vector3(1f, buttonposition, 0f);
            
@@ -73,7 +74,7 @@ public class PickupButton : MonoBehaviour
         {
             attached = true;
 
-           
+            pickUpMeshRenderer.material = pickUpNormalColor;
             //rendererl.color = Color.green;
             transform.localPosition = new Vector3(1f, 0f, 0f);
 
