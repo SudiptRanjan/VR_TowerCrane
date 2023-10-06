@@ -6,17 +6,11 @@ using UnityEngine.InputSystem;
 
 public class JibMovement : MonoBehaviour
 {
-    //private CraneInputActions m_inputaction;
     [SerializeField] float moveSpeed = 0.5f;
     float newRotation = 0;
-    //public bool isalerted, isEngineStarted;
     [SerializeField] private float yMinValueRotation = 10f, yMaxValueRotation = 60f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //isalerted = false;
-        //isEngineStarted = false;
-    }
+
+   
 
     private void OnEnable()
     {
@@ -81,5 +75,3 @@ public class JibMovement : MonoBehaviour
 
     }
 }
-//transform.localRotation = Quaternion.Euler(new Vector3(0f, Mathf.Clamp(transform.localRotation.y, yMinValueRotation, yMaxValueRotation), 0f));
-//transform.Rotate(Vector3.forward * rotate * Time.deltaTime * 80);

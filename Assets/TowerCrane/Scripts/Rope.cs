@@ -17,8 +17,11 @@ public class Rope : MonoBehaviour
     void Start()
     {
         line = GetComponent<LineRenderer>();
-        configurableJoint = GetComponent<ConfigurableJoint>(); ;
-
+        configurableJoint = GetComponent<ConfigurableJoint>();
+        line.SetPosition(0, transform.position);
+        line.SetPosition(1, ropePosition.transform.position);
+        //Application.targetFrameRate = 300;
+        //QualitySettings.vSyncCount = 0;
     }
 
    
@@ -34,6 +37,12 @@ public class Rope : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        //line.SetPosition(0, transform.position);
+        //line.SetPosition(1, ropePosition.transform.position);
+
+    }
 
 
     void SetLengthOfRope(float ropeValue)
@@ -90,85 +99,7 @@ public class Rope : MonoBehaviour
 
     }
 
-    //IEnumerator UpdateRopeLimit()
-    //{
-    //    while (ropeValue != 0)
-    //    {
-    //        Debug.Log("UpdateRopeLimit");
-    //        //print(ropeValue);
-    //        if (ropeValue > 0 && distanceOfRope < maxHighDistance)
-    //        {
-    //            if (ropeValue < 15)
-    //            {
-    //                distanceOfRope += 0.01f;
-    //                //print("Gear 1= ");
-    //            }
-    //            else if (ropeValue < 30)
-    //            {
-    //                distanceOfRope += 0.03f;
-    //                //print("Gear 2 " );
-    //            }
-    //            else if (ropeValue <= 45)
-    //            {
-    //                distanceOfRope += 0.05f;
-    //                //print("Gear 3  ");
-    //            }
-
-    //            // Debug.Log("distanceOfRope ++++ =" + distanceOfRope);
-    //        }
-    //        else if (ropeValue < 0 && distanceOfRope > minLowDistance)
-    //        {
-    //            if (ropeValue > -15)
-    //            {
-    //                distanceOfRope -= 0.01f;
-    //                //print("ReverceGear 1");
-    //            }
-    //            else if (ropeValue > -30)
-    //            {
-    //                distanceOfRope -= 0.03f;
-    //                //print("ReverceGear 2");
-    //            }
-    //            else if (ropeValue >= -45)
-    //            {
-    //                distanceOfRope -= 0.05f;
-    //                //print("ReverceGear 3");
-    //            }
-    //            //  Debug.Log("distanceOfRope ----- =" + distanceOfRope);
-
-    //        }
-
-    //        // if (ropeValue != 0)
-    //        {
-    //            limits.limit = distanceOfRope;
-
-
-    //            configurableJoint.linearLimit = limits;
-
-    //            line.SetPosition(0, transform.position);
-
-    //            line.SetPosition(1, configurableJoint.connectedBody.transform.position);
-
-    //        }
-    //        yield return null;
-    //        //yield return new WaitForSeconds(0.005f);
-    //    }
-    //}
-
-    //void SetLengthOfRope(float ropeValue)
-    //{
-
-
-
-
-    //    if (this.ropeValue != ropeValue)
-    //    {
-    //        this.ropeValue = ropeValue;
-    //        //StartCoroutine(UpdateRopeLimit());
-    //    }
-
-
-
-    //}
+    
 
 }
     

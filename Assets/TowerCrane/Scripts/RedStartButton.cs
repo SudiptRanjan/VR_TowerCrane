@@ -44,13 +44,7 @@ public class RedStartButton : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-
-
-        
-
-    }
+   
 
    
     #endregion

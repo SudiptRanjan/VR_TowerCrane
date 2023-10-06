@@ -1,5 +1,3 @@
-
-
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -36,7 +34,6 @@ public class GreenAlertButton : MonoBehaviour
         xrHands.selectExited.AddListener(UnGrab);
         //rendererls.color = Color.green;
         greenMeshRenderer.material = greenNormalColor;
-        //alert = true;
 
     }
 
@@ -47,19 +44,7 @@ public class GreenAlertButton : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-
-
-        //if (currentInteractorRope != null)
-        //{
-
-        //}
-        //Events.onClickRedButton(grabed);
-
-
-
-    }
+   
 
    
     #endregion
@@ -75,9 +60,7 @@ public class GreenAlertButton : MonoBehaviour
     {
         currentInteractor = args0.interactorObject;
         Debug.Log("Grab Entered red button");
-        //jibMovement.isalerted = true;
-        //jibMovement.isEngineStarted = true;
-        //alert = true;
+       
 
         if (engineStartButton == false)
         {
@@ -102,9 +85,7 @@ public class GreenAlertButton : MonoBehaviour
     private void UnGrab(SelectExitEventArgs args0)
     {
         Debug.Log("UnGrabbing red button");
-        //ropeLengthValue = 0;
         currentInteractor = null;
-        //isTriggered = false;
     }
     #endregion
 }

@@ -33,24 +33,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Joystick",
-                    "type": "Value",
-                    "id": "aec8692e-c3b2-43e8-9bb8-cc002d8a6bde",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "RightJoystick",
-                    "type": "Value",
-                    "id": "8a5f3441-0a9f-41de-88f0-7c5ef9724c1d",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "Drop",
                     "type": "Button",
                     "id": "5e55d0a6-9205-470f-88c9-f2993eb3fd4f",
@@ -159,28 +141,6 @@
                     "action": "LengtOfRope",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "5eedc8fb-32ae-496e-943f-fb7c4838b095",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Joystick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e6dfc218-8df4-41c8-9ac9-ae94e8cc3892",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RightJoystick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",

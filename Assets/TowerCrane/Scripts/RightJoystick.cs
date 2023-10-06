@@ -17,7 +17,6 @@ public class RightJoystick : MonoBehaviour
     [SerializeField] Transform playerStick;
 
     [SerializeField] XRSimpleInteractable xrHandsRopes;
-    //bool isTriggered;
 
     [SerializeField] Vector2 gunControlXPos;
     [SerializeField] Vector2 gunControlYPos;
@@ -60,10 +59,7 @@ public class RightJoystick : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Player Got Hit");
-    }
+    
     #endregion
 
     #region STATIC_FUNCTIONS
@@ -94,12 +90,6 @@ public class RightJoystick : MonoBehaviour
         
     }
 
-
-    //private void StopFiring(CallbackContext obj)
-    //{
-    //    isTriggered = false;
-    //}
-
     //IEnumerator UpdateRopeLimit()
     //{
     //    //while(ropeLengthValue != 0)
@@ -114,7 +104,7 @@ public class RightJoystick : MonoBehaviour
     //}
     private void FixedUpdate()
     {
-        if(isgrabed)
+        if (isgrabed)
         {
             Events.onRopeValueChange(ropeLengthValue);
 
@@ -134,8 +124,6 @@ public class RightJoystick : MonoBehaviour
 
         playerStick.rotation = stickForward;
 
-        //Debug.Log("local Rotation " + playerStick.localEulerAngles);
-        //Debug.Log("Rotation " + playerStick.eulerAngles);
         float stickXRot = playerStick.localRotation.eulerAngles.x;
         float stickYRot = playerStick.localRotation.eulerAngles.y;
 
@@ -143,12 +131,10 @@ public class RightJoystick : MonoBehaviour
         if (!(stickXRot > 0 && stickXRot < 180) && !(stickXRot < 0 && stickXRot > -180))
         {
             stickXRot = stickXRot - 360;
-            //Debug.Log("Converted Value of X " + stickXRot);
         }
         if (!(stickYRot > 0 && stickYRot < 180) && !(stickYRot < 0 && stickYRot > -180))
         {
             stickYRot = stickYRot - 360;
-            //Debug.Log("Converted Valye of Y " + stickYRot);
         }
 
         clampedX = Mathf.Clamp(stickXRot, gunControlXPos.x, gunControlXPos.y);
@@ -158,9 +144,7 @@ public class RightJoystick : MonoBehaviour
         {
             ropeLengthValue = -clampedX;
         }
-        //ropeLengthValue = clampedX;
       
-        //print("clampedX == "+ clampedX);
         playerStick.localRotation = Quaternion.Euler(clampedX, clampedZ, 0);
 
 

@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 
 public class CraneMovement : MonoBehaviour
 {
-	//float  yMinValue=-0.7480196f, yManValue= -0.1820065f;
 	float yMinValue = -35f, yManValue = -7f;
 	float clampMovement = 0;
 	public Rigidbody rb;
@@ -79,11 +78,7 @@ public class CraneMovement : MonoBehaviour
 		transform.localPosition = new Vector3(0, 2.4f, clampMovement);
 
 		
-		//transform.localPosition = new Vector3(0,  2.4f, Mathf.Clamp(transform.localPosition.z, yMinValue, yManValue));
-		//transform.Translate(0, Mathf.Clamp(transform.localPosition.y, yMinValue, yManValue), 1);
-		//transform.Translate(Vector3.forward * yDirection * Time.deltaTime * speed);
-
-		//print(yDirection);
+		
 	}
 
 

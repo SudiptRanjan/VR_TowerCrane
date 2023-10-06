@@ -8,72 +8,72 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: _1
-    second: {fileID: 2100000, guid: 9358e2b502fe0494c9bb35aa04cebd04, type: 2}
+    second: {fileID: 2100000, guid: b93278ab2bde948c9aa55856a126785f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: _2
-    second: {fileID: 2100000, guid: 84b315af3f6a94f62b9a28af79394188, type: 2}
+    second: {fileID: 2100000, guid: baf5a4226d07149ec8fc2f528f435609, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: _3
-    second: {fileID: 2100000, guid: 9ab770f8ea7ad42f895d371dbcb1a1c0, type: 2}
+    second: {fileID: 2100000, guid: e3d1f50530284482fbb88bdb9f58f6e6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: _4
-    second: {fileID: 2100000, guid: 05595b40b9e1c4373af885ee1a18b59c, type: 2}
+    second: {fileID: 2100000, guid: 7e2ce94f5caeb4320aee7d2eaebe3595, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: _5
-    second: {fileID: 2100000, guid: f1a47d771fa0142b1ba3d0fbd6c253a7, type: 2}
+    second: {fileID: 2100000, guid: 3b2988c424b0c424cb86e931276b26d4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: _6
-    second: {fileID: 2100000, guid: b777efb62686e48a78b353730327ee05, type: 2}
+    second: {fileID: 2100000, guid: c920832589c354fe69656ebeebb53d92, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: footpath
-    second: {fileID: 2100000, guid: 1a33ae8b5034e45eab2ed5efd6f3b6ff, type: 2}
+    second: {fileID: 2100000, guid: 205811e07cfaa4720b7140024395e686, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__base
-    second: {fileID: 2100000, guid: 30eebb7faaa4c4e9dbf4f70cb70a4e75, type: 2}
+    second: {fileID: 2100000, guid: 0dd9675cf3bb34d138d052116f9ccdf9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__details
-    second: {fileID: 2100000, guid: db11525627b214893b4b2724d6ee3050, type: 2}
+    second: {fileID: 2100000, guid: 844ea7bb2ab824813ba95d4133b49b63, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__fasades
-    second: {fileID: 2100000, guid: e62ff0976a53b468b9e76cd28c6b7426, type: 2}
+    second: {fileID: 2100000, guid: c11b14d109b8f478b9b0d4f42e46af6c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__fasades2
-    second: {fileID: 2100000, guid: ac17e7d0dd75d4c79b6df49ce47e626f, type: 2}
+    second: {fileID: 2100000, guid: c1bbbcce834684389aeb6b19fc08038a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__rails
-    second: {fileID: 2100000, guid: 4cebb6eb4f3ba4b9289c12bcba242662, type: 2}
+    second: {fileID: 2100000, guid: bd553f71efa1742ebaa20617b031057a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__rp_nathan_animated_003_mat
-    second: {fileID: 2100000, guid: 5d811e5d2aa344ef08cbc3269733d039, type: 2}
+    second: {fileID: 2100000, guid: 594a9fa5a18d94e51bcdcd21d39fcbf0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__vehicles
-    second: {fileID: 2100000, guid: 6a0e2b9130f694a07b9c1191fb0040ba, type: 2}
+    second: {fileID: 2100000, guid: a869e0401df264777bc4694c01d114b8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

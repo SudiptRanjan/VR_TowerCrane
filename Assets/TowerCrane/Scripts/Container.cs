@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class Container : MonoBehaviour
 {
-    //[SerializeField] private float radius;
-    //public Transform hoockConnect;
-    //private FixedJoint fixedJoint;
+    
     public Rigidbody rb;
-    private bool isHooked = false;
-
     private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
