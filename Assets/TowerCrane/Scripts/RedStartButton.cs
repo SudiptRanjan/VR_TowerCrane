@@ -13,6 +13,7 @@ public class RedStartButton : MonoBehaviour
     public MeshRenderer meshRenderer;
     public Material emissiveColor;
     public Material normalColor;
+    public GreenAlertButton greenAlertButton;
 
 
     #endregion
@@ -44,9 +45,9 @@ public class RedStartButton : MonoBehaviour
 
     }
 
-   
 
-   
+
+
     #endregion
 
     #region STATIC_FUNCTIONS
@@ -56,13 +57,13 @@ public class RedStartButton : MonoBehaviour
     #endregion
 
     #region PRIVATE_FUNCTIONS
-  
 
-   
+
+
     private void Grab(SelectEnterEventArgs args0)
     {
         currentInteractor = args0.interactorObject;
-        
+
 
         if (alert == false)
         {
@@ -73,15 +74,15 @@ public class RedStartButton : MonoBehaviour
 
             transform.localPosition = new Vector3(1f, buttonposition, 0f);
 
-           
+
         }
         else
         {
             alert = false;
             meshRenderer.material = normalColor;
             audioSource.Stop();
-            transform.localPosition = new Vector3(1f, 0f, 0f);           
-
+            transform.localPosition = new Vector3(1f, 0f, 0f);
+            greenAlertButton.setOffGreenButton();
         }
 
     }
@@ -89,13 +90,12 @@ public class RedStartButton : MonoBehaviour
 
     private void UnGrab(SelectExitEventArgs args0)
     {
-        
+
         currentInteractor = null;
 
     }
     #endregion
 }
-
 
 
 

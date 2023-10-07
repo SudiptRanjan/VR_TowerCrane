@@ -145,11 +145,16 @@ public class LeftJoystick : MonoBehaviour
         clampedZ = Mathf.Clamp(stickYRot, gunControlYPos.x, gunControlYPos.y);
 
 
-        if(redStartButton.alert && greenAlert.engineStartButton)
+        if(redStartButton.alert  && greenAlert.engineStartButton)
         {
-            rotateValue = -clampedZ;
-            movementValue = clampedX;
-            //print(" Alert");
+
+           
+            
+                rotateValue = -clampedZ;
+                movementValue = clampedX;
+                //print(" Alert");
+            
+
         }
 
        

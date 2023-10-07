@@ -13,12 +13,7 @@ public class CraneMovement : MonoBehaviour
     
 	[SerializeField] private float speed = 0.5f;
 
-    private void Start()
-    {
-        
-
-    }
-
+   
     private void OnEnable()
 	{
 		Events.onPlayerMoves += Move;
@@ -72,7 +67,6 @@ public class CraneMovement : MonoBehaviour
                 //  print("ReverceGear 3");
             }
         }
-
 
         clampMovement = Mathf.Clamp(clampMovement, yMinValue, yManValue);
 		transform.localPosition = new Vector3(0, 2.4f, clampMovement);

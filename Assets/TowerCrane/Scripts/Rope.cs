@@ -18,10 +18,10 @@ public class Rope : MonoBehaviour
     {
         line = GetComponent<LineRenderer>();
         configurableJoint = GetComponent<ConfigurableJoint>();
-        line.SetPosition(0, transform.position);
-        line.SetPosition(1, ropePosition.transform.position);
+        //line.SetPosition(0, transform.position);
+        //line.SetPosition(1, ropePosition.transform.position);
         //Application.targetFrameRate = 300;
-        //QualitySettings.vSyncCount = 0;
+        QualitySettings.vSyncCount = 0;
     }
 
    
@@ -39,8 +39,8 @@ public class Rope : MonoBehaviour
 
     private void Update()
     {
-        //line.SetPosition(0, transform.position);
-        //line.SetPosition(1, ropePosition.transform.position);
+        line.SetPosition(0, transform.position);
+        line.SetPosition(1, ropePosition.transform.position);
 
     }
 
@@ -49,9 +49,9 @@ public class Rope : MonoBehaviour
     {
 
 
-        line.SetPosition(0, transform.position);
+        //line.SetPosition(0, transform.position);
         //line.SetPosition(1, configurableJoint.connectedBody.transform.position);
-        line.SetPosition(1, ropePosition.transform.position);
+        //line.SetPosition(1, ropePosition.transform.position);
 
 
 

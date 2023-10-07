@@ -18,17 +18,17 @@ public class Container : MonoBehaviour
 
    
 
-    void BodyIsDetached(bool detached)
-    {
-        //print(detached);
+    //void BodyIsDetached(bool detached)
+    //{
+    //    //print(detached);
 
-        //if (detached!)
-        //{
-        //    detached = true;
-        //    fixedJoint.connectedBody = null;
+    //    //if (detached!)
+    //    //{
+    //    //    detached = true;
+    //    //    fixedJoint.connectedBody = null;
 
-        //}
-    }
+    //    //}
+    //}
 
 
    

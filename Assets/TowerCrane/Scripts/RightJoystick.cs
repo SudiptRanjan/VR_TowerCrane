@@ -142,7 +142,12 @@ public class RightJoystick : MonoBehaviour
 
         if (redStartButton.alert && greenAlert.engineStartButton)
         {
-            ropeLengthValue = -clampedX;
+           
+            
+                ropeLengthValue = -clampedX;
+
+            
+
         }
       
         playerStick.localRotation = Quaternion.Euler(clampedX, clampedZ, 0);

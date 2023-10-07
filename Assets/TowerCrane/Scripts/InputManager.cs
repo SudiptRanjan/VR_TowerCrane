@@ -17,10 +17,10 @@ public class InputManager : MonoBehaviour
 
     private void OnEnable()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
+        //if (instance == null)
+        //{
+        //    instance = this;
+        //}
         //m_inputaction = new CraneInputActions();
         //m_inputaction.Enable();
         //m_inputaction.Crane.Movement.performed += OnCraneMoves;
@@ -63,19 +63,19 @@ public class InputManager : MonoBehaviour
 
         //m_inputaction.Dispose();
 
-       
+
 
 
 
     }
-    private void Update()
-    {
-        //Events.onPlayerMoves?.Invoke(moveZ);
-        //Events.onPlayerRotate?.Invoke(rotateValue);
-        //Events.onRopeValueChange?.Invoke(ropeLength);
-        //Events.onHookDetachedToObject?.Invoke(detached);
-        //Events.onHookAttachToObject?.Invoke(attached);
-    }
+    //private void Update()
+    //{
+    //    //Events.onPlayerMoves?.Invoke(moveZ);
+    //    //Events.onPlayerRotate?.Invoke(rotateValue);
+    //    //Events.onRopeValueChange?.Invoke(ropeLength);
+    //    //Events.onHookDetachedToObject?.Invoke(detached);
+    //    //Events.onHookAttachToObject?.Invoke(attached);
+    //}
 
     private void OnCraneMoves(InputAction.CallbackContext obj)
     {

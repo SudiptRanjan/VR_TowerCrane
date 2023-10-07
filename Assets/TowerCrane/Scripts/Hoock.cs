@@ -48,10 +48,10 @@ public class Hoock : MonoBehaviour
         {
             ApplyDecelerationForce();
         }
-        else
-        {
+        //else
+        //{
 
-        }
+        //}
     }
 
     void ApplyDecelerationForce()
