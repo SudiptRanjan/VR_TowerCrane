@@ -59,10 +59,11 @@ public class LeftJoystick : MonoBehaviour
         if (currentInteractor != null)
         {
             TopBallMovement();
+            Events.onPlayerMoves(movementValue);
+            Events.onPlayerRotate(rotateValue);
         }
 
-        Events.onPlayerMoves(movementValue);
-        Events.onPlayerRotate(rotateValue);
+       
     }
 
     //IEnumerator UpdateMovement()

@@ -146,8 +146,6 @@ public class RightJoystick : MonoBehaviour
             
                 ropeLengthValue = -clampedX;
 
-            
-
         }
       
         playerStick.localRotation = Quaternion.Euler(clampedX, clampedZ, 0);

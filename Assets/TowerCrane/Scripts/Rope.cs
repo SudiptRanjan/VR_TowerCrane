@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class Rope : MonoBehaviour
 {
-    ConfigurableJoint configurableJoint;
+    #region PUBLIC_VARS
     public LineRenderer line;
     public float distanceOfRope, minLowDistance;
     public float maxHighDistance;
     public SoftJointLimit limits = new SoftJointLimit();
     public GameObject ropePosition;
+    #endregion
 
-    private float ropeValue = 0;
-    //Rigidbody rb;
+    #region PRIVATE_VARS
+    ConfigurableJoint configurableJoint;
 
+    #endregion
+
+
+    #region UNITY_CALLBACKS
     void Start()
     {
         line = GetComponent<LineRenderer>();
@@ -44,6 +49,16 @@ public class Rope : MonoBehaviour
 
     }
 
+    #endregion
+
+
+    #region STATIC_FUNCTIONS
+    #endregion
+
+    #region PUBLIC_FUNCTIONS
+    #endregion
+
+    #region PRIVATE_FUNCTIONS
 
     void SetLengthOfRope(float ropeValue)
     {
@@ -98,8 +113,10 @@ public class Rope : MonoBehaviour
         configurableJoint.linearLimit = limits;
 
     }
+    #endregion
 
-    
+
+
 
 }
     

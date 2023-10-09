@@ -53,6 +53,13 @@ public class GreenAlertButton : MonoBehaviour
     #endregion
 
     #region PUBLIC_FUNCTIONS
+    public void setOffGreenButton()
+    {
+        engineStartButton = false;
+        greenMeshRenderer.material = greenNormalColor;
+        //rendererls.color = Color.green;
+        transform.localPosition = new Vector3(1f, 0f, 0f);
+    }
     #endregion
 
     #region PRIVATE_FUNCTIONS
@@ -86,13 +93,7 @@ public class GreenAlertButton : MonoBehaviour
     }
 
 
-    public void setOffGreenButton()
-    {
-        engineStartButton = false;
-        greenMeshRenderer.material = greenNormalColor;
-        //rendererls.color = Color.green;
-        transform.localPosition = new Vector3(1f, 0f, 0f);
-    }
+   
     private void UnGrab(SelectExitEventArgs args0)
     {
         Debug.Log("UnGrabbing red button");

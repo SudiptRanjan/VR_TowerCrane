@@ -6,12 +6,18 @@ using UnityEngine.InputSystem;
 
 public class JibMovement : MonoBehaviour
 {
+    #region PUBLIC_VARS
+    #endregion
+
+    #region PRIVATE_VARS
     [SerializeField] float moveSpeed = 0.5f;
     float newRotation = 0;
     [SerializeField] private float yMinValueRotation = 10f, yMaxValueRotation = 60f;
 
-   
+    #endregion
 
+
+    #region UNITY_CALLBACKS
     private void OnEnable()
     {
         Events.onPlayerRotate += Rotates;
@@ -22,29 +28,34 @@ public class JibMovement : MonoBehaviour
         Events.onPlayerRotate -= Rotates;
 
     }
-   
+    #endregion
 
-    private void Rotates(float  rotate)
+
+    #region STATIC_FUNCTIONS
+    #endregion
+
+    #region PUBLIC_FUNCTIONS
+    #endregion
+
+    #region PRIVATE_FUNCTIONS
+    private void Rotates(float rotate)
     {
 
-      
+
         if (rotate > 0)
         {
 
             if (rotate < 15)
             {
                 newRotation += Time.deltaTime * moveSpeed * 0.2f;
-                //print("Gear 1 =" + newRotation);
             }
             else if (rotate < 30)
             {
                 newRotation += Time.deltaTime * moveSpeed * 0.5f;
-                //print("Gear 2 =" + newRotation);
             }
             else if (rotate <= 45)
             {
                 newRotation += Time.deltaTime * moveSpeed;
-                //print("Gear 3 =" + newRotation);
             }
 
         }
@@ -54,17 +65,14 @@ public class JibMovement : MonoBehaviour
             if (rotate > -15)
             {
                 newRotation -= Time.deltaTime * moveSpeed * 0.2f;
-                //print("ReverceGear 1");
             }
             else if (rotate > -30)
             {
                 newRotation -= Time.deltaTime * moveSpeed * 0.5f;
-                //print("ReverceGear 2");
             }
             else if (rotate >= -45)
             {
                 newRotation -= Time.deltaTime * moveSpeed;
-                //print("ReverceGear 3");
             }
 
         }
@@ -74,4 +82,7 @@ public class JibMovement : MonoBehaviour
         transform.localRotation = Quaternion.Euler(0, newRotation, 0);
 
     }
+
+    #endregion
+
 }

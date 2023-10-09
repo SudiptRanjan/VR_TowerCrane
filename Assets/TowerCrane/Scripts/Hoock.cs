@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class Hoock : MonoBehaviour
 {
-
-    [SerializeField] private float radius;
+    #region PUBLIC_VARS
     public Transform hoockConnect;
-    private FixedJoint fixedJoint;
     public float decelerationForce = 1f;
+    #endregion
+
+    #region PRIVATE_VARS
+    [SerializeField] private float radius;
+    private FixedJoint fixedJoint;
     private bool isHooked = false;
     private Rigidbody rb;
+    #endregion
+
+    #region UNITY_CALLBACKS
 
     private void Start()
     {
@@ -31,6 +37,37 @@ public class Hoock : MonoBehaviour
 
     void Update()
     {
+        //rb.WakeUp();
+        //float movementInput = Input.GetAxis("Vertical");
+
+        //isMoving = Mathf.Abs(movementInput) > 0.1f;
+
+        //if (!isMoving)
+        //{
+        //    movementInput = Input.GetAxis("Horizontal");
+
+        //    isMoving = Mathf.Abs(movementInput) > 0.1f;
+
+        //}
+
+        //if (!isMoving)
+        //{
+        //    ApplyDecelerationForce();
+        //}
+        deacelarationForce();
+    }
+    #endregion
+
+    #region STATIC_FUNCTIONS
+    #endregion
+
+    #region PUBLIC_FUNCTIONS
+    #endregion
+
+    #region PRIVATE_FUNCTION
+
+    void deacelarationForce()
+    {
         rb.WakeUp();
         float movementInput = Input.GetAxis("Vertical");
 
@@ -48,11 +85,8 @@ public class Hoock : MonoBehaviour
         {
             ApplyDecelerationForce();
         }
-        //else
-        //{
-
-        //}
     }
+
 
     void ApplyDecelerationForce()
     {
@@ -86,11 +120,8 @@ public class Hoock : MonoBehaviour
                   
 
                 }
-               
-               
+
             }
-
-
         }
         else
         {
@@ -105,6 +136,7 @@ public class Hoock : MonoBehaviour
         }
 
     }
+    #endregion
 
 
 }

@@ -7,13 +7,21 @@ using UnityEngine.InputSystem;
 
 public class CraneMovement : MonoBehaviour
 {
-	float yMinValue = -35f, yManValue = -7f;
-	float clampMovement = 0;
-	public Rigidbody rb;
-    
-	[SerializeField] private float speed = 0.5f;
+    #region PUBLIC_VARS
+    public Rigidbody rb;
+    #endregion
 
-   
+    #region PRIVATE_VARS 
+    float yMinValue = -35f, yManValue = -7f;
+	float clampMovement = 0;
+    
+
+
+    [SerializeField] private float speed = 0.5f;
+    #endregion
+
+    #region UNITY_CALLBACKS
+
     private void OnEnable()
 	{
 		Events.onPlayerMoves += Move;
@@ -26,8 +34,16 @@ public class CraneMovement : MonoBehaviour
 		
 
 	}
+    #endregion
+    #region STATIC_FUNCTIONS
+    #endregion
 
-	private void Move( float yDirection)
+    #region PUBLIC_FUNCTIONS
+    #endregion
+
+    #region PRIVATE_FUNCTIONS
+
+    private void Move( float yDirection)
 	{
        
         if (yDirection > 0)
@@ -71,9 +87,10 @@ public class CraneMovement : MonoBehaviour
         clampMovement = Mathf.Clamp(clampMovement, yMinValue, yManValue);
 		transform.localPosition = new Vector3(0, 2.4f, clampMovement);
 
-		
-		
-	}
+
+        #endregion
+
+    }
 
 
 }
