@@ -14,7 +14,7 @@ public class Rope : MonoBehaviour
 
     #region PRIVATE_VARS
     ConfigurableJoint configurableJoint;
-
+    
     #endregion
 
 
@@ -25,7 +25,6 @@ public class Rope : MonoBehaviour
         configurableJoint = GetComponent<ConfigurableJoint>();
         //line.SetPosition(0, transform.position);
         //line.SetPosition(1, ropePosition.transform.position);
-        //Application.targetFrameRate = 300;
         QualitySettings.vSyncCount = 0;
     }
 
@@ -62,12 +61,6 @@ public class Rope : MonoBehaviour
 
     void SetLengthOfRope(float ropeValue)
     {
-
-
-        //line.SetPosition(0, transform.position);
-        //line.SetPosition(1, configurableJoint.connectedBody.transform.position);
-        //line.SetPosition(1, ropePosition.transform.position);
-
 
 
         if (ropeValue > 0 && distanceOfRope < maxHighDistance)

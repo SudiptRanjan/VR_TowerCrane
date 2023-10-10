@@ -12,7 +12,7 @@ public class PickupButton : MonoBehaviour
     public MeshRenderer pickUpMeshRenderer;
     public Material pickUpEmissiveColor;
     public Material pickUpNormalColor;
-
+    public bool grabed;
     #endregion
 
     #region PRIVATE_VARS        
@@ -20,7 +20,7 @@ public class PickupButton : MonoBehaviour
     [SerializeField] XRSimpleInteractable xrHandsRopes;
      float buttonposition = -0.1f;
 
-    bool grabed;
+    
     [SerializeField] IXRSelectInteractor currentInteractorRope;
     #endregion
 

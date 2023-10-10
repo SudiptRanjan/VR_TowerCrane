@@ -6,6 +6,7 @@ public class Container : MonoBehaviour
 {
     #region PUBLIC_VARS
     public Rigidbody rb;
+    public PickupButton pickupButton;
     #endregion
     #region PRIVATE_VARS
     #endregion
@@ -19,6 +20,7 @@ public class Container : MonoBehaviour
     private void Update()
     {
         rb.WakeUp();
+        applyDrag();
     }
     #endregion
 
@@ -29,6 +31,17 @@ public class Container : MonoBehaviour
     #endregion
 
     #region PRIVATE_FUNCTIONS
+    void applyDrag()
+    {
+        if(pickupButton.grabed)
+        {
+            rb.drag = 7;
+        }
+        else
+        {
+            rb.drag = 0;
+        }
+    }
     #endregion
 
 
