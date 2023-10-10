@@ -95,6 +95,8 @@ public class Hoock : MonoBehaviour
 
         rb.AddForce(deceleration, ForceMode.Acceleration);
     }
+
+
     void CheckingOfPhysicsBody(bool attached)
     {
 
