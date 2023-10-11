@@ -37,7 +37,7 @@ public class Hoock : MonoBehaviour
 
     void Update()
     {
-        //rb.WakeUp();
+        rb.WakeUp();
         //float movementInput = Input.GetAxis("Vertical");
 
         //isMoving = Mathf.Abs(movementInput) > 0.1f;
@@ -68,7 +68,7 @@ public class Hoock : MonoBehaviour
 
     void deacelarationForce()
     {
-        rb.WakeUp();
+        //rb.WakeUp();
         float movementInput = Input.GetAxis("Vertical");
 
         isMoving = Mathf.Abs(movementInput) > 0.1f;

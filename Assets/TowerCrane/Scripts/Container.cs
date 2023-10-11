@@ -33,9 +33,9 @@ public class Container : MonoBehaviour
     #region PRIVATE_FUNCTIONS
     void applyDrag()
     {
-        if(pickupButton.grabed)
+        if (pickupButton.grabed)
         {
-            rb.drag = 7;
+            rb.drag = 3;
         }
         else
         {

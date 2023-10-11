@@ -8,6 +8,9 @@ public class ControllerHandSwitcher : MonoBehaviour
 {
     private XRDirectInteractor directInteractor;
     private GameObject controllerHand;
+    private XRBaseInteractable currentInteractable;
+
+    
 
     private void Awake()
     {
@@ -34,11 +37,17 @@ public class ControllerHandSwitcher : MonoBehaviour
 
     private void OnInteractorReleased(SelectExitEventArgs arg0)
     {
+
         controllerHand.gameObject.SetActive(true);
     }
 
     private void OnInteractorUsed(SelectEnterEventArgs arg0)
     {
-        controllerHand.gameObject.SetActive(false);
+        currentInteractable = arg0.interactable;
+        if(currentInteractable.gameObject.name== "JoystickHand")
+        {
+            controllerHand.gameObject.SetActive(false);
+
+        }
     }
 }

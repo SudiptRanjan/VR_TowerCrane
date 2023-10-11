@@ -98,6 +98,7 @@ public class LeftJoystick : MonoBehaviour
     #region PRIVATE_FUNCTIONS
     private void Grab(SelectEnterEventArgs args0)
     {
+
         currentInteractor = args0.interactorObject;
         //StartCoroutine(UpdateMovement());
     }
